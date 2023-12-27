@@ -41,6 +41,24 @@
         margin-left: 0;
       }
     }
+
+    .testimonial {
+      display: flex;
+      align-items: center; /* Align items vertically */
+      margin-bottom: 1em; /* Space between testimonials */
+    }
+
+    .testimonial-image {
+      display: flex;
+      flex-direction: column; /* Stack image and name vertically */
+      align-items: center; /* Center-align image and name */
+      margin-right: 1em; /* Space between image/name block and text */
+    }
+
+    .testimonial-text {
+      margin: 0; /* Remove default paragraph margin */
+      flex-grow: 1; /* Allow the quote text to fill the remaining space */
+    }
   </style>
   <body class="w3-black">
     <!-- Icon Bar (Sidebar - hidden on small screens) -->
@@ -224,30 +242,33 @@
           <!-- End Grid/Pricing tables -->
         </div>
 
-        <!-- Testimonials -->
-        <h3 class="w3-padding-24 w3-text-light-grey">Témoignages clients</h3>
-        <img
-          src="img/brucewayne.png"
-          alt="Avatar"
-          class="w3-left w3-circle w3-margin-right"
-          style="width: 80px"
-        />
-        <p><span class="w3-large w3-margin-right">Bruce Wayne.</span></p>
-        <p>It's not who I am underneath, but what I do that defines me.</p>
-        <br />
-
-        <img
-          src="img/joker.png"
-          alt="Avatar"
-          class="w3-left w3-circle w3-margin-right"
-          style="width: 80px"
-        />
-        <p>
-          <span class="w3-large w3-margin-right">The Joker.</span>
-        </p>
-        <p>Why so serious?</p>
-        <!-- End About Section -->
+        <!-- Testimonial by Bruce Wayne -->
+      <div class="testimonial">
+        <div class="testimonial-image">
+          <img src="img/brucewayne.png" alt="Avatar" class="w3-circle" style="width: 80px"/>
+          <p><span class="w3-large">Bruce Wayne.</span></p>
+        </div>
+        <p class="testimonial-text"><i>It's not who I am underneath, but what I do that defines me.</i></p>
       </div>
+
+      <!-- Testimonial by The Joker -->
+      <div class="testimonial">
+        <div class="testimonial-image">
+          <img src="img/joker.png" alt="Avatar" class="w3-circle" style="width: 80px"/>
+          <p><span class="w3-large">The Joker.</span></p>
+        </div>
+        <p class="testimonial-text"><i>Why so serious?</i></p>
+      </div>
+
+      <!-- Testimonial by Harvey Dent -->
+      <div class="testimonial">
+        <div class="testimonial-image">
+          <img src="img/dent.png" alt="Avatar" class="w3-circle" style="width: 80px"/>
+          <p><span class="w3-large">Harvey Dent.</span></p>
+        </div>
+        <p class="testimonial-text"><i>It's not about what I want, it's about what's fair! You thought we could be decent men in an indecent time. But you were wrong. The world is cruel. And the only morality in a cruel world... is chance. Unbiased. Unprejudiced. Fair.</i></p>
+      </div>
+
 
       <!-- Portfolio Section -->
       <div class="w3-padding-64 w3-content" id="photos">
