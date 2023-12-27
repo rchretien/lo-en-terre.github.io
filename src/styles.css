@@ -96,8 +96,24 @@ h6 {
 
 
 .circle-icon {
-  background-color: rgb(25, 94, 223); /* Light blue background */
-  border-radius: 50%;          /* Makes the background circular */
-  padding: 10px;               /* Padding to create space around the icon */
-  display: inline-block;       /* Ensures the circle shape */
+  background-color: rgb(25, 94, 223);
+  border-radius: 50%;
+  padding: 10px;
+  display: inline-flex; /* changed to inline-flex for better centering */
+  align-items: center;
+  justify-content: center;
+  width: 40px; /* new */
+  height: 40px; /* new */
 }
+
+#hamburgerBtn:hover, #hamburgerBtn:focus, #hamburgerBtn:active {
+  background-color: transparent !important; /* Force no background change */
+  border: none !important; /* Force no border */
+  box-shadow: none !important; /* Remove any box-shadow */
+}
+
+/* Additionally, target the inner <i> elements if they have hover effects */
+#hamburgerBtn:hover i, #hamburgerBtn:focus i, #hamburgerBtn:active i {
+  background-color: transparent !important;
+}
+
