@@ -23,18 +23,22 @@
     h6 {
       font-family: "Montserrat", sans-serif;
     }
+
     .w3-row-padding img {
       margin-bottom: 12px;
     }
+
     /* Set the width of the sidebar to 120px */
     .w3-sidebar {
       width: 120px;
       background: #222;
     }
+
     /* Add a left margin to the "page content" that matches the width of the sidebar (120px) */
     #main {
       margin-left: 120px;
     }
+
     /* Remove margins from "page content" on small screens */
     @media only screen and (max-width: 600px) {
       #main {
@@ -47,8 +51,8 @@
 
       #myNavbar .w3-bar-item {
         display: none; /* Initially hide menu items */
-        text-align: left; /* Align menu items to the left */
         width: 100%; /* Full width for vertical stacking */
+        text-align: left; /* Align menu items to the left */
       }
 
       #myNavbar.open .w3-bar-item {
@@ -73,16 +77,6 @@
       margin: 0; /* Remove default paragraph margin */
       flex-grow: 1; /* Allow the quote text to fill the remaining space */
     }
-
-    @media only screen and (max-width: 600px) {
-    #myNavbar .w3-bar-item {
-      display: none; /* Initially hide menu items */
-    }
-
-    #myNavbar.open .w3-bar-item {
-      display: block; /* Show items when menu is open */
-    }
-}
   </style>
   <body class="w3-black">
     <!-- Icon Bar (Sidebar - hidden on small screens) -->
