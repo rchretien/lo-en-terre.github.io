@@ -40,6 +40,20 @@
       #main {
         margin-left: 0;
       }
+
+      #myNavbar {
+        text-align: right; /* Align hamburger to the right */
+      }
+
+      #myNavbar .w3-bar-item {
+        display: none; /* Initially hide menu items */
+        text-align: left; /* Align menu items to the left */
+        width: 100%; /* Full width for vertical stacking */
+      }
+
+      #myNavbar.open .w3-bar-item {
+        display: block; /* Show items as block for vertical layout */
+      }
     }
 
     .testimonial {
@@ -106,7 +120,7 @@
     <div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
       <!-- Hamburger Menu Button -->
       <button
-      class="w3-button w3-black w3-xlarge"
+      class="w3-button w3-black w3-xlarge w3-right"
       id="hamburgerBtn"
       onclick="toggleMenu()"
       >
