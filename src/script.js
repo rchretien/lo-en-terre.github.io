@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function() {
 var slideout = new Slideout({
   'panel': document.getElementById('main'),
   'menu': document.querySelector('.w3-sidebar'),
-  'padding': 250, // Adjust to the width of your sidebar
+  'padding': 120,
   'tolerance': 70
 });
 
