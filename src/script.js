@@ -1,23 +1,3 @@
-function toggleMenu() {
-  var sidebar = document.getElementsByClassName("w3-sidebar")[0];
-  var overlay = document.getElementById("overlay");
-  var hamburgerIcon = document.getElementById("hamburgerIcon");
-  var crossIcon = document.getElementById("crossIcon");
-
-  // Toggle sidebar
-  if (sidebar.classList.contains("open")) {
-      sidebar.classList.remove("open");
-      overlay.classList.remove("open");
-      hamburgerIcon.style.display = "block";
-      crossIcon.style.display = "none";
-  } else {
-      sidebar.classList.add("open");
-      overlay.classList.add("open");
-      hamburgerIcon.style.display = "none";
-      crossIcon.style.display = "block";
-  }
-}
-
 // Initialize baguetteBox plugin
 baguetteBox.run('.w3-row-padding', {
   animation: 'fadeIn',
@@ -28,7 +8,6 @@ baguetteBox.run('.w3-row-padding', {
   preload: 2,
 });
 
-
 // Lazy load images for better performance
 document.addEventListener("DOMContentLoaded", function() {
   const lazyLoadInstance = new LazyLoad({
@@ -36,15 +15,35 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 });
 
-// Initialize slideout.js plugin for mobile navigation
+// Initialize Slideout
 var slideout = new Slideout({
-  'panel': document.getElementById('panel'),
-  'menu': document.getElementById('menu'),
-  'padding': 256,
+  'panel': document.getElementById('main'),
+  'menu': document.querySelector('.w3-sidebar'),
+  'padding': 250, // Adjust to the width of your sidebar
   'tolerance': 70
 });
 
-// Toggle hamburger button
-document.querySelector('.toggle-button').addEventListener('click', function() {
+// Toggle Slideout and update icons
+function toggleMenu() {
   slideout.toggle();
+}
+
+document.getElementById('hamburgerBtn').addEventListener('click', toggleMenu);
+
+document.getElementById('overlay').addEventListener('click', function() {
+  slideout.close();
+});
+
+slideout.on('translate', function(translated) {
+  document.getElementById('main').style.marginLeft = translated + 'px';
+});
+
+slideout.on('beforeopen', function() {
+  document.getElementById("overlay").style.display = 'block';
+  document.getElementById("hamburgerIcon").style.display = 'none';
+  document.getElementById("crossIcon").style.display = 'block';
+}).on('beforeclose', function() {
+  document.getElementById("overlay").style.display = 'none';
+  document.getElementById("hamburgerIcon").style.display = 'block';
+  document.getElementById("crossIcon").style.display = 'none';
 });
