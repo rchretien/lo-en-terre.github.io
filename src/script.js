@@ -19,3 +19,12 @@ function toggleMenu() {
 }
 
 
+// Lazy load images for better performance
+document.addEventListener("DOMContentLoaded", function() {
+  const lazyLoadInstance = new LazyLoad({
+      elements_selector: "img[data-src]", // Selector for lazy-loadable images
+  });
+});
+
+
+

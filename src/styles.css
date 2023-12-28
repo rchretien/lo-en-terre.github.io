@@ -1,3 +1,9 @@
+/* Smooth scrolling for the entire website */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Font family and other existing CSS rules continue below */
 body, h1, h2, h3, h4, h5, h6 {
   font-family: "Montserrat", sans-serif;
 }
