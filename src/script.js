@@ -18,6 +18,16 @@ function toggleMenu() {
   }
 }
 
+// Initialize baguetteBox plugin
+baguetteBox.run('.w3-row-padding', {
+  animation: 'fadeIn',
+  noScrollbars: true,
+  buttons: true,
+  captions: true,
+  fullScreen: false,
+  preload: 2,
+});
+
 
 // Lazy load images for better performance
 document.addEventListener("DOMContentLoaded", function() {
