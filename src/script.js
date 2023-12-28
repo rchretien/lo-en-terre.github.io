@@ -36,5 +36,15 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 });
 
+// Initialize slideout.js plugin for mobile navigation
+var slideout = new Slideout({
+  'panel': document.getElementById('panel'),
+  'menu': document.getElementById('menu'),
+  'padding': 256,
+  'tolerance': 70
+});
 
-
+// Toggle hamburger button
+document.querySelector('.toggle-button').addEventListener('click', function() {
+  slideout.toggle();
+});
