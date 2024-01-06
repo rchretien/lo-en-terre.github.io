@@ -241,7 +241,7 @@ h6 {
 #hero {
   width: 100%;
   height: 100vh;
-  background: url("../img/lo-cer-re.png") top center;
+  background: url("../img/lo-cer2.png") top center;
   background-size: cover;
 }
 
@@ -805,21 +805,37 @@ section {
   font-size: 26px;
 }
 
-.testimonials .testimonial-item .quote-icon-left {
+/* .testimonials .testimonial-item .quote-icon-left {
   display: inline-block;
   left: -5px;
   position: relative;
-}
+} */
 
-.testimonials .testimonial-item .quote-icon-right {
+/* .testimonials .testimonial-item .quote-icon-right {
   display: inline-block;
   right: -5px;
   position: relative;
   top: 10px;
+} */
+
+.testimonials .testimonial-item .quote-icon-left {
+  top: -10px; /* Adjust to place at the top inside the box */
+  left: 0; /* Align to the left */
+  transform: translate(-50%, 0); /* Center horizontally with offset */
 }
 
-.testimonials .testimonial-item p {
+.testimonials .testimonial-item .quote-icon-right {
+  bottom: -10px; /* Adjust to place at the bottom inside the box */
+  right: 0; /* Align to the right */
+  transform: translate(50%, 0); /* Center horizontally with offset */
+}
+
+/* .testimonials .testimonial-item p {
   font-style: italic;
+  display: flex; 
+  align-items: center;
+  justify-content: center;
+  text-align: center; 
   margin: 0 15px 15px 15px;
   padding: 20px;
   background: #fff;
@@ -827,6 +843,25 @@ section {
   margin-bottom: 35px;
   border-radius: 6px;
   box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+  height: 310px; 
+} */
+
+.testimonials .testimonial-item p {
+  font-style: italic;
+  display: flex;
+  flex-direction: column; /* Stack children vertically */
+  justify-content: center; /* Center content vertically */
+  text-align: center;
+  margin: 0 15px 15px 15px;
+  padding: 20px;
+  padding-top: 40px; /* Add space for the top quotation mark */
+  padding-bottom: 40px; /* Add space for the bottom quotation mark */
+  background: #fff;
+  position: relative;
+  margin-bottom: 35px;
+  border-radius: 6px;
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+  height: 310px; /* Fixed height for the quote container */
 }
 
 .testimonials .testimonial-item p::after {
