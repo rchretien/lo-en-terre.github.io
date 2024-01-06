@@ -241,7 +241,6 @@ h6 {
 #hero {
   width: 100%;
   height: 100vh;
-  /* background: url("../img/hero-bg.jpg") top center; */
   background: url("../img/lo-cer-re.png") top center;
   background-size: cover;
 }
@@ -261,13 +260,18 @@ h6 {
   position: relative;
   z-index: 2;
   min-width: 300px;
+  display: flex; /* Enable flexbox */
+  flex-direction: column; /* Stack children vertically */
+  justify-content: center; /* Center children vertically */
+  height: 100%; /* Take full height of the viewport */
+  text-align: center; /* Center text horizontally */
 }
 
 #hero h1 {
   margin: 0 0 10px 0;
-  font-size: 64px;
+  font-size: 112px;
   font-weight: 700;
-  line-height: 56px;
+  line-height: 96px;
   color: #fff;
 }
 
@@ -377,6 +381,13 @@ section {
 
 .about .content p:last-child {
   margin-bottom: 0;
+}
+
+/*--------------------------------------------------------------
+# Clay work
+--------------------------------------------------------------*/
+.clay-work {
+  padding-bottom: 30px;
 }
 
 /*--------------------------------------------------------------
