@@ -19,37 +19,33 @@ document.addEventListener("DOMContentLoaded", function () {
 var slideout = new Slideout({
   panel: document.getElementById("main"),
   menu: document.querySelector(".w3-sidebar"),
-  padding: 0,
+  padding: 120,
   tolerance: 70,
 });
 
-// Function to toggle menu visibility
+// Toggle Slideout and update icons
 function toggleMenu() {
   slideout.toggle();
 }
 
-// Event listener for the hamburger button
 document.getElementById("hamburgerBtn").addEventListener("click", toggleMenu);
 
-// Event listeners for Slideout actions
-slideout.on("beforeopen", function () {
-  document.getElementById("overlay").style.display = "block";
-  document.getElementById("hamburgerIcon").style.display = "none";
-  document.getElementById("crossIcon").style.display = "block";
-});
-
-slideout.on("beforeclose", function () {
-  document.getElementById("overlay").style.display = "none";
-  document.getElementById("hamburgerIcon").style.display = "block";
-  document.getElementById("crossIcon").style.display = "none";
-});
-
-// Event listener for overlay click to close the menu
 document.getElementById("overlay").addEventListener("click", function () {
   slideout.close();
 });
 
-// Additional event listeners for Slideout's translate effect
 slideout.on("translate", function (translated) {
   document.getElementById("main").style.marginLeft = translated + "px";
 });
+
+slideout
+  .on("beforeopen", function () {
+    document.getElementById("overlay").style.display = "block";
+    document.getElementById("hamburgerIcon").style.display = "none";
+    document.getElementById("crossIcon").style.display = "block";
+  })
+  .on("beforeclose", function () {
+    document.getElementById("overlay").style.display = "none";
+    document.getElementById("hamburgerIcon").style.display = "block";
+    document.getElementById("crossIcon").style.display = "none";
+  });
