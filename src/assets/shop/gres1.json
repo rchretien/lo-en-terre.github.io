@@ -1,0 +1,13 @@
+{
+    "image_paths": 
+    [
+        "assets/img/shop/gres1.jpg",
+        "assets/img/shop/gres1_bis.jpg"
+    ],
+    "name": "Alhambra",
+    "baking_type": "Haute temperature",
+    "description": "Terre MRH, émail Marocco",
+    "dimensions": "12,5 centimètres de diamètre et 19 centimètre de hauteur",
+    "weight": "1073 kg",
+    "price": "65 euros"
+}
