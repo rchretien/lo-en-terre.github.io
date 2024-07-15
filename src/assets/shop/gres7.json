@@ -1,0 +1,15 @@
+{
+    "image_paths": 
+    [
+        "assets/img/shop/gres7.jpg",
+        "assets/img/shop/gres7_bis.jpg",
+        "assets/img/shop/gres7_ter.jpg",
+        "assets/img/shop/gres7_quat.jpg"
+    ],
+    "name": "Tula",
+    "baking_type": "Monocuisson haute temperature",
+    "description": "Terre nigra",
+    "dimensions": "8.5 cm de haut, 23.5 cm d'ouverture",
+    "weight": "1072 g",
+    "price": "58 €"
+}

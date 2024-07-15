@@ -142,13 +142,8 @@
           <div class="row gy-4">
             <div class="col-lg-8">
               <div class="portfolio-details-slider swiper">
-                <div class="swiper-wrapper align-items-center">
-                  <div class="swiper-slide">
-                    <img src="assets/img/shop/gres1.jpg" alt="" />
-                  </div>
-                  <div class="swiper-slide">
-                    <img src="assets/img/shop/gres1_bis.jpg" alt="" />
-                  </div>
+                <div class="swiper-wrapper align-items-center" id="imageSlider">
+                  <!-- Initial slides (if needed) can be placed here, but will be overwritten by JS -->
                 </div>
                 <div class="swiper-pagination"></div>
               </div>
@@ -158,17 +153,12 @@
               <div class="portfolio-info">
                 <h3>Caractéristiques</h3>
                 <ul>
-                  <li><strong>Nom</strong> : Alhambra</li>
-                  <li><strong>Cuisson</strong>: Haute temperature</li>
-                  <li>
-                    <strong>Description</strong>: Terre MRH, émail "Marocco"
-                  </li>
-                  <li>
-                    <strong>Dimensions</strong>: 12,5 centimètres de diamètre et
-                    19 centimètre de hauteur
-                  </li>
-                  <li><strong>Poids</strong>: 1073 kg</li>
-                  <li><strong>Prix</strong>: 65 euros</li>
+                  <li><strong>Nom</strong> : <span id="productName">Alhambra</span></li>
+                  <li><strong>Cuisson</strong>: <span id="bakingType">Haute temperature</span></li>
+                  <li><strong>Description</strong>: <span id="description">Terre MRH, émail Marocco</span></li>
+                  <li><strong>Dimensions</strong>: <span id="dimensions">12,5 centimètres de diamètre et 19 centimètre de hauteur</span></li>
+                  <li><strong>Poids</strong>: <span id="weight">1073 kg</span></li>
+                  <li><strong>Prix</strong>: <span id="price">65 euros</span></li>
                 </ul>
               </div>
             </div>
@@ -215,72 +205,6 @@
 
     <!-- Template Main JS File -->
     <script src="assets/js/main.js"></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-      // Function to fetch JSON data
-      function fetchJsonData(jsonFilePath) {
-        return fetch(jsonFilePath)
-          .then(response => response.json())
-          .catch(error => {
-            console.error('Error fetching JSON:', error);
-            return null;
-          });
-      }
-
-      // Get JSON file path from URL query parameter
-      function getUrlParameter(sParam) {
-        var sPageURL = window.location.search.substring(1);
-        var urlParams = new URLSearchParams(sPageURL);
-        return urlParams.get(sParam);
-      }
-
-      var paramsJsonPath = getUrlParameter('paramsJsonPath');
-      if (paramsJsonPath) {
-        fetchJsonData(paramsJsonPath)
-          .then(data => {
-            if (data) {
-              // Update product name
-              document.getElementById('productName').textContent = data.name;
-
-              // Update baking type
-              document.getElementById('bakingType').textContent = data.baking_type;
-
-              // Update description
-              document.getElementById('description').textContent = data.description;
-
-              // Update dimensions
-              document.getElementById('dimensions').textContent = data.dimensions;
-
-              // Update weight
-              document.getElementById('weight').textContent = data.weight;
-
-              // Update price
-              document.getElementById('price').textContent = data.price;
-
-              // Update image slider
-              var imageSlider = document.getElementById('imageSlider');
-              data.image_paths.forEach(imagePath => {
-                var swiperSlide = document.createElement('div');
-                swiperSlide.className = 'swiper-slide';
-                var img = document.createElement('img');
-                img.src = imagePath;
-                img.alt = ''; // You can set alt text if needed
-                swiperSlide.appendChild(img);
-                imageSlider.appendChild(swiperSlide);
-              });
-
-              // Initialize Swiper slider after images are added
-              var swiper = new Swiper('.portfolio-details-slider', {
-                loop: true,
-                pagination: {
-                  el: '.swiper-pagination',
-                  clickable: true,
-                },
-              });
-            }
-          });
-      }
-    });
-    </script>
+    <script src="assets/js/parse_json.js"></script>
   </body>
 </html>
