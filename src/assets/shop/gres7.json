@@ -2,9 +2,7 @@
     "image_paths": 
     [
         "assets/img/shop/gres7.jpg",
-        "assets/img/shop/gres7_bis.jpg",
-        "assets/img/shop/gres7_ter.jpg",
-        "assets/img/shop/gres7_quat.jpg"
+        "assets/img/shop/gres7_bis.jpg"
     ],
     "name": "Tula",
     "baking_type": "Monocuisson haute temperature",

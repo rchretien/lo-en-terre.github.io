@@ -1,13 +1,12 @@
 {
     "image_paths": 
     [
-        "assets/img/shop/gres8.jpg",
-        "assets/img/shop/gres8_bis.jpg"
+        "assets/img/shop/gres8.jpg"
     ],
     "name": "Bambou B3",
     "baking_type": "Haute temperature",
-    "description": "Terre beton, email vert lustré",
-    "dimensions": "10.5 cm de haut, 9.5cm d'ouverture. Non alimentaire.",
+    "description": "Terre beton, email vert lustré (non alimentaire).",
+    "dimensions": "10.5 cm de haut, 9.5cm d'ouverture.",
     "weight": "353 g",
     "price": "20 €"
 }
