@@ -1,0 +1,13 @@
+{
+    "image_paths": 
+    [
+        "assets/img/shop/gres6.jpg",
+        "assets/img/shop/gres6_bis.jpg"
+    ],
+    "name": "Pacifique P2",
+    "baking_type": "Haute temperature",
+    "description": "Terre blanche émail pacifique",
+    "dimensions": "8.5 cm de haut, 10 cm d'ouverture",
+    "weight": "280 g",
+    "price": "18 €"
+}

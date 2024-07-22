@@ -1,0 +1,12 @@
+{
+    "image_paths": 
+    [
+        "assets/img/shop/porc2.jpg"
+    ],
+    "name": "Espagne",
+    "baking_type": "Haute temperature",
+    "description": "Porcelaine blanche, émail rouge Espagne.",
+    "dimensions": "Moins de 9cm de haut, 8 cm d'ouverture.",
+    "weight": "218 g",
+    "price": "19 €"
+}

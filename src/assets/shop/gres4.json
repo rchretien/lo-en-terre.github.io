@@ -1,0 +1,13 @@
+{
+    "image_paths": 
+    [
+        "assets/img/shop/gres4.jpg",
+        "assets/img/shop/gres4_bis.jpg"
+    ],
+    "name": "Cyclades",
+    "baking_type": "Haute temperature",
+    "description": "Terre pyritée, émail blanc",
+    "dimensions": "/",
+    "weight": "/",
+    "price": "80 €"
+}

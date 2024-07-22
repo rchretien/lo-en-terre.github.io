@@ -142,10 +142,8 @@
           <div class="row gy-4">
             <div class="col-lg-8">
               <div class="portfolio-details-slider swiper">
-                <div class="swiper-wrapper align-items-center">
-                  <div class="swiper-slide">
-                    <img src="assets/img/shop/porcelain1.jpg" alt="" />
-                  </div>
+                <div class="swiper-wrapper align-items-center" id="imageSlider">
+                  <!-- Initial slides (if needed) can be placed here, but will be overwritten by JS -->
                 </div>
                 <div class="swiper-pagination"></div>
               </div>
@@ -155,22 +153,12 @@
               <div class="portfolio-info">
                 <h3>Caractéristiques</h3>
                 <ul>
-                  <li><strong>Nom</strong>: Luma bis</li>
-                  <li>
-                    <strong>Cuisson</strong>: Cuisson électrique haute
-                    température.
-                  </li>
-                  <li>
-                    <strong>Description</strong>: Envie de boire votre thé ou
-                    votre café dans une tasse artisanale? Luma bis vous attend
-                    🍵!
-                  </li>
-                  <li>
-                    <strong>Dimensions</strong>: 8,5 centimètres de hauteur et 7
-                    centimètres d'ouverture.
-                  </li>
-                  <li><strong>Poids</strong>: 212 grammes.</li>
-                  <li><strong>Prix</strong>: 25 euros.</li>
+                  <li><strong>Nom</strong> : <span id="productName">name</span></li>
+                  <li><strong>Cuisson</strong>: <span id="bakingType">temperature</span></li>
+                  <li><strong>Description</strong>: <span id="description">description</span></li>
+                  <li><strong>Dimensions</strong>: <span id="dimensions">dimensions</span></li>
+                  <li><strong>Poids</strong>: <span id="weight">weight/span></li>
+                  <li><strong>Prix</strong>: <span id="price">price</span></li>
                 </ul>
               </div>
             </div>
@@ -217,5 +205,6 @@
 
     <!-- Template Main JS File -->
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/parse_json.js"></script>
   </body>
 </html>

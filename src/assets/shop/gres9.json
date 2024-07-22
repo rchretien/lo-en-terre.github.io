@@ -1,0 +1,13 @@
+{
+    "image_paths": 
+    [
+        "assets/img/shop/gres9.jpg",
+        "assets/img/shop/gres9_bis.jpg"
+    ],
+    "name": "Bambou B4",
+    "baking_type": "Haute temperature",
+    "description": "Terre beton, email vert lustré",
+    "dimensions": "313 g, 11.5 cm de haut, 9 cm d'ouverture. Non alimentaire.",
+    "weight": "1073 kg",
+    "price": "20 €"
+}

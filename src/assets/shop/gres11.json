@@ -1,0 +1,13 @@
+{
+    "image_paths": 
+    [
+        "assets/img/shop/gres11.jpg",
+        "assets/img/shop/gres11_bis.jpg"
+    ],
+    "name": "Preta",
+    "baking_type": "Haute temperature",
+    "description": "Monocuisson",
+    "dimensions": "15 cm de haut, 14.5 cm d'ouverture.",
+    "weight": "1250 g",
+    "price": "68 €"
+}
