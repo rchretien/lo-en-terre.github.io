@@ -671,6 +671,45 @@ section {
   margin-bottom: 20px;
 }
 
+/* Add more space between FAQ items */
+.faq .row {
+  margin-bottom: 40px;
+}
+
+.faq .row:last-child {
+  margin-bottom: 0;
+}
+
+.faq .icon-box {
+  margin-bottom: 35px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.faq details {
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.faq .description {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  margin-top: 15px;
+}
+
+.faq summary.title {
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+}
+
 .services .icon {
   float: left;
   display: flex;
