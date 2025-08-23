@@ -14,6 +14,30 @@ body {
   color: #272829;
 }
 
+/* Add styles for the summary element */
+summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  list-style: none; /* Remove default arrow */
+}
+
+summary::-webkit-details-marker {
+  display: none; /* Remove default arrow in WebKit browsers */
+}
+
+summary::after {
+  content: "▼";
+  color: #dd8014; /* Orange color matching the theme */
+  margin-left: 10px;
+  transition: transform 0.3s ease;
+}
+
+details[open] > summary::after {
+  transform: rotate(180deg);
+}
+
 a {
   color: #149ddd;
   text-decoration: none;
