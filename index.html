@@ -298,7 +298,8 @@
           </p>
         </div>
 
-        <div class="row">
+        <!-- Desktop images -->
+        <div class="row d-none d-lg-flex">
           <div class="col-lg-4 mb-4">
             <img src="src/assets/img/workshop/overview4.webp" class="img-fluid rounded" alt="Atelier Lo en terre"
               loading="lazy">
@@ -312,6 +313,93 @@
               loading="lazy">
           </div>
         </div>
+        
+        <!-- Mobile swiper -->
+        <div class="d-block d-lg-none">
+          <div class="workshop-slider swiper" data-aos="fade-up" data-aos-delay="100">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img src="src/assets/img/workshop/overview4.webp" class="img-fluid rounded" alt="Atelier Lo en terre"
+                  loading="lazy">
+              </div>
+              <div class="swiper-slide">
+                <img src="src/assets/img/workshop/overview5.webp" class="img-fluid rounded" alt="Espace de création"
+                  loading="lazy">
+              </div>
+              <div class="swiper-slide">
+                <img src="src/assets/img/workshop/overview6.webp" class="img-fluid rounded" alt="Espace de création"
+                  loading="lazy">
+              </div>
+            </div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+          </div>
+        </div>
+
+        <style>
+          .workshop-slider {
+            width: 100%;
+            margin-bottom: 30px;
+          }
+          .workshop-slider .swiper-slide {
+            width: 100%;
+            cursor: grab;
+          }
+          .workshop-slider .swiper-pagination {
+            margin-top: 20px;
+            position: relative;
+          }
+          .workshop-slider .swiper-pagination .swiper-pagination-bullet {
+            width: 12px;
+            height: 12px;
+            background-color: #fff;
+            opacity: 1;
+            border: 1px solid #F09300;
+          }
+          .workshop-slider .swiper-pagination .swiper-pagination-bullet-active {
+            background-color: #F09300;
+          }
+          .workshop-slider .swiper-button-prev,
+          .workshop-slider .swiper-button-next {
+            color: #F09300;
+          }
+        </style>
+        
+        <style>
+          .workshop-swiper {
+            width: 100%;
+            padding-bottom: 40px;
+            overflow: hidden;
+            position: relative;
+          }
+          .workshop-swiper .swiper-slide {
+            width: 100%;
+            height: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+          .workshop-swiper .swiper-slide img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+          }
+          .workshop-swiper .swiper-button-next,
+          .workshop-swiper .swiper-button-prev {
+            color: #F09300;
+          }
+          .workshop-swiper .swiper-pagination-bullet-active {
+            background: #F09300;
+          }
+          .workshop-swiper .swiper-button-next:after,
+          .workshop-swiper .swiper-button-prev:after {
+            font-size: 20px;
+          }
+          .workshop-swiper .swiper-wrapper {
+            align-items: center;
+          }
+        </style>
 
         <hr>
 
