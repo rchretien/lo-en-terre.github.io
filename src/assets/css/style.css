@@ -759,6 +759,69 @@ section {
 }
 
 /*--------------------------------------------------------------
+# Atelier 96 Slider
+--------------------------------------------------------------*/
+.atelier96-gallery {
+  margin: 30px 0 40px;
+}
+
+.atelier96-slider {
+  position: relative;
+  width: 100%;
+  padding-bottom: 48px;
+}
+
+.atelier96-slider .swiper-wrapper {
+  align-items: stretch;
+}
+
+.atelier96-slider .swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: grab;
+}
+
+.atelier96-slider .swiper-slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.atelier96-slider .swiper-pagination {
+  margin-top: 20px;
+  position: relative;
+}
+
+.atelier96-slider .swiper-pagination .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background-color: #fff;
+  opacity: 1;
+  border: 1px solid #f09300;
+}
+
+.atelier96-slider .swiper-pagination .swiper-pagination-bullet-active {
+  background-color: #f09300;
+}
+
+.atelier96-slider .swiper-button-prev,
+.atelier96-slider .swiper-button-next {
+  color: #f09300;
+}
+
+.atelier96-slider .swiper-button-prev:after,
+.atelier96-slider .swiper-button-next:after {
+  font-size: 20px;
+}
+
+@media (min-width: 992px) {
+  .atelier96-slider {
+    padding-bottom: 64px;
+  }
+}
+
+/*--------------------------------------------------------------
 # Testimonials
 --------------------------------------------------------------*/
 .testimonials .testimonials-carousel,

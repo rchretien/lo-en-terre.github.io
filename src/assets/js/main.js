@@ -272,34 +272,41 @@
   new PureCounter();
 
   /**
-   * Workshop mobile images swiper
+   * Atelier 96 gallery swiper
    */
-  new Swiper(".workshop-slider", {
-    speed: 600,
-    loop: true,
-    autoplay: {
-      delay: 5000,
-      disableOnInteraction: false,
-    },
-    slidesPerView: "auto",
-    pagination: {
-      el: ".swiper-pagination",
-      type: "bullets",
-      clickable: true,
-    },
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-    breakpoints: {
-      320: {
-        slidesPerView: 1,
-        spaceBetween: 20,
+  if (select(".atelier96-slider")) {
+    new Swiper(".atelier96-slider", {
+      speed: 600,
+      loop: true,
+      autoplay: {
+        delay: 5000,
+        disableOnInteraction: false,
       },
-      768: {
-        slidesPerView: 1,
-        spaceBetween: 20,
+      slidesPerView: 1,
+      spaceBetween: 20,
+      pagination: {
+        el: ".atelier96-pagination",
+        type: "bullets",
+        clickable: true,
       },
-    },
-  });
+      navigation: {
+        nextEl: ".atelier96-button-next",
+        prevEl: ".atelier96-button-prev",
+      },
+      keyboard: {
+        enabled: true,
+        onlyInViewport: true,
+      },
+      breakpoints: {
+        768: {
+          slidesPerView: 2,
+          spaceBetween: 24,
+        },
+        992: {
+          slidesPerView: 3,
+          spaceBetween: 24,
+        },
+      },
+    });
+  }
 })();
