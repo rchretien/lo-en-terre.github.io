@@ -759,41 +759,37 @@ section {
 }
 
 /*--------------------------------------------------------------
-# Atelier 96 Slider
+# Atelier 96 mobile slider
 --------------------------------------------------------------*/
-.atelier96-gallery {
-  margin: 30px 0 40px;
-}
-
-.atelier96-slider {
+.atelier96-mobile-slider {
   position: relative;
   width: 100%;
-  padding-bottom: 48px;
+  margin-bottom: 30px;
+  padding-bottom: 40px;
 }
 
-.atelier96-slider .swiper-wrapper {
-  align-items: stretch;
-}
-
-.atelier96-slider .swiper-slide {
-  display: flex;
+.atelier96-mobile-slider .swiper-wrapper {
   align-items: center;
+}
+
+.atelier96-mobile-slider .swiper-slide {
+  display: flex;
   justify-content: center;
   cursor: grab;
 }
 
-.atelier96-slider .swiper-slide img {
+.atelier96-mobile-slider .swiper-slide img {
   width: 100%;
   height: auto;
   display: block;
 }
 
-.atelier96-slider .swiper-pagination {
+.atelier96-mobile-pagination {
   margin-top: 20px;
   position: relative;
 }
 
-.atelier96-slider .swiper-pagination .swiper-pagination-bullet {
+.atelier96-mobile-pagination .swiper-pagination-bullet {
   width: 12px;
   height: 12px;
   background-color: #fff;
@@ -801,24 +797,18 @@ section {
   border: 1px solid #f09300;
 }
 
-.atelier96-slider .swiper-pagination .swiper-pagination-bullet-active {
+.atelier96-mobile-pagination .swiper-pagination-bullet-active {
   background-color: #f09300;
 }
 
-.atelier96-slider .swiper-button-prev,
-.atelier96-slider .swiper-button-next {
+.atelier96-mobile-prev,
+.atelier96-mobile-next {
   color: #f09300;
 }
 
-.atelier96-slider .swiper-button-prev:after,
-.atelier96-slider .swiper-button-next:after {
+.atelier96-mobile-prev:after,
+.atelier96-mobile-next:after {
   font-size: 20px;
-}
-
-@media (min-width: 992px) {
-  .atelier96-slider {
-    padding-bottom: 64px;
-  }
 }
 
 /*--------------------------------------------------------------

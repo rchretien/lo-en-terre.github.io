@@ -272,10 +272,10 @@
   new PureCounter();
 
   /**
-   * Atelier 96 gallery swiper
+   * Atelier 96 mobile slider
    */
-  if (select(".atelier96-slider")) {
-    new Swiper(".atelier96-slider", {
+  if (select(".atelier96-mobile-slider")) {
+    new Swiper(".atelier96-mobile-slider", {
       speed: 600,
       loop: true,
       autoplay: {
@@ -285,27 +285,17 @@
       slidesPerView: 1,
       spaceBetween: 20,
       pagination: {
-        el: ".atelier96-pagination",
+        el: ".atelier96-mobile-pagination",
         type: "bullets",
         clickable: true,
       },
       navigation: {
-        nextEl: ".atelier96-button-next",
-        prevEl: ".atelier96-button-prev",
+        nextEl: ".atelier96-mobile-next",
+        prevEl: ".atelier96-mobile-prev",
       },
       keyboard: {
         enabled: true,
         onlyInViewport: true,
-      },
-      breakpoints: {
-        768: {
-          slidesPerView: 2,
-          spaceBetween: 24,
-        },
-        992: {
-          slidesPerView: 3,
-          spaceBetween: 24,
-        },
       },
     });
   }
