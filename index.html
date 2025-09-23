@@ -335,10 +335,25 @@
           .workshop-slider {
             width: 100%;
             margin-bottom: 30px;
+            padding-bottom: 40px;
+            overflow: hidden;
+            position: relative;
+          }
+          .workshop-slider .swiper-wrapper {
+            align-items: center;
           }
           .workshop-slider .swiper-slide {
             width: 100%;
+            height: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             cursor: grab;
+          }
+          .workshop-slider .swiper-slide img {
+            max-width: 100%;
+            height: auto;
+            display: block;
           }
           .workshop-slider .swiper-pagination {
             margin-top: 20px;
@@ -358,40 +373,9 @@
           .workshop-slider .swiper-button-next {
             color: #F09300;
           }
-        </style>
-        
-        <style>
-          .workshop-swiper {
-            width: 100%;
-            padding-bottom: 40px;
-            overflow: hidden;
-            position: relative;
-          }
-          .workshop-swiper .swiper-slide {
-            width: 100%;
-            height: auto;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-          }
-          .workshop-swiper .swiper-slide img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-          }
-          .workshop-swiper .swiper-button-next,
-          .workshop-swiper .swiper-button-prev {
-            color: #F09300;
-          }
-          .workshop-swiper .swiper-pagination-bullet-active {
-            background: #F09300;
-          }
-          .workshop-swiper .swiper-button-next:after,
-          .workshop-swiper .swiper-button-prev:after {
+          .workshop-slider .swiper-button-next:after,
+          .workshop-slider .swiper-button-prev:after {
             font-size: 20px;
-          }
-          .workshop-swiper .swiper-wrapper {
-            align-items: center;
           }
         </style>
 

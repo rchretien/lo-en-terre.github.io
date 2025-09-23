@@ -274,7 +274,7 @@
   /**
    * Workshop mobile images swiper
    */
-  new Swiper(".workshop-swiper", {
+  new Swiper(".workshop-slider", {
     speed: 600,
     loop: true,
     autoplay: {
@@ -299,7 +299,7 @@
       768: {
         slidesPerView: 1,
         spaceBetween: 20,
-      }
+      },
     },
   });
 })();
