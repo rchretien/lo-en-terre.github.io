@@ -271,35 +271,4 @@
    */
   new PureCounter();
 
-  /**
-   * Workshop mobile images swiper
-   */
-  new Swiper(".workshop-swiper", {
-    speed: 600,
-    loop: true,
-    autoplay: {
-      delay: 5000,
-      disableOnInteraction: false,
-    },
-    slidesPerView: "auto",
-    pagination: {
-      el: ".swiper-pagination",
-      type: "bullets",
-      clickable: true,
-    },
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-    breakpoints: {
-      320: {
-        slidesPerView: 1,
-        spaceBetween: 20,
-      },
-      768: {
-        slidesPerView: 1,
-        spaceBetween: 20,
-      }
-    },
-  });
 })();
