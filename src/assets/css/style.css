@@ -759,59 +759,6 @@ section {
 }
 
 /*--------------------------------------------------------------
-# Atelier 96 mobile slider
---------------------------------------------------------------*/
-.atelier96-mobile-slider {
-  position: relative;
-  width: 100%;
-  margin-bottom: 30px;
-  padding-bottom: 40px;
-}
-
-.atelier96-mobile-slider .swiper-wrapper {
-  align-items: center;
-}
-
-.atelier96-mobile-slider .swiper-slide {
-  display: flex;
-  justify-content: center;
-  cursor: grab;
-}
-
-.atelier96-mobile-slider .swiper-slide img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-.atelier96-mobile-pagination {
-  margin-top: 20px;
-  position: relative;
-}
-
-.atelier96-mobile-pagination .swiper-pagination-bullet {
-  width: 12px;
-  height: 12px;
-  background-color: #fff;
-  opacity: 1;
-  border: 1px solid #f09300;
-}
-
-.atelier96-mobile-pagination .swiper-pagination-bullet-active {
-  background-color: #f09300;
-}
-
-.atelier96-mobile-prev,
-.atelier96-mobile-next {
-  color: #f09300;
-}
-
-.atelier96-mobile-prev:after,
-.atelier96-mobile-next:after {
-  font-size: 20px;
-}
-
-/*--------------------------------------------------------------
 # Testimonials
 --------------------------------------------------------------*/
 .testimonials .testimonials-carousel,

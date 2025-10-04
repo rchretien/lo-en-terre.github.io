@@ -271,32 +271,4 @@
    */
   new PureCounter();
 
-  /**
-   * Atelier 96 mobile slider
-   */
-  if (select(".atelier96-mobile-slider")) {
-    new Swiper(".atelier96-mobile-slider", {
-      speed: 600,
-      loop: true,
-      autoplay: {
-        delay: 5000,
-        disableOnInteraction: false,
-      },
-      slidesPerView: 1,
-      spaceBetween: 20,
-      pagination: {
-        el: ".atelier96-mobile-pagination",
-        type: "bullets",
-        clickable: true,
-      },
-      navigation: {
-        nextEl: ".atelier96-mobile-next",
-        prevEl: ".atelier96-mobile-prev",
-      },
-      keyboard: {
-        enabled: true,
-        onlyInViewport: true,
-      },
-    });
-  }
 })();
