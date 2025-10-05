@@ -3,22 +3,46 @@
 
 <head>
   <meta charset="utf-8" />
-  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Lo en terre</title>
-  <meta content="" name="description" />
-  <meta content="" name="keywords" />
+  <!-- 🏷️ SEO Title & Description -->
+  <title>Lo en terre | Atelier de poterie à Liège - Céramique, Raku & Tournage</title>
+  <meta name="description" content="Lo en terre - Atelier de poterie à Liège. Découvrez la céramique, le tournage et le raku dans un cadre chaleureux et artisanal. Réservez votre atelier dès aujourd’hui !" />
+  <meta name="language" content="fr" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://loenterre.be/" />
 
-  <!-- Favicons -->
+  <!-- 🪶 Performance: Preconnect & Preload Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <!-- Primary font (Open Sans) preloaded for instant text rendering -->
+  <link
+    rel="preload"
+    as="style"
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap"
+    onload="this.onload=null;this.rel='stylesheet'"
+  />
+
+  <!-- Secondary fonts (Raleway & Poppins) loaded normally -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Fallback for users with JS disabled -->
+  <noscript>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap"
+    />
+  </noscript>
+
+  <!-- 🧩 Favicons -->
   <link href="src/assets/img/logo.png" rel="icon" />
   <link href="src/assets/img/logo.png" rel="apple-touch-icon" />
 
-  <!-- Google Fonts -->
-  <link
-    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
-    rel="stylesheet" />
-
-  <!-- Vendor CSS Files -->
+  <!-- 🧱 Vendor CSS -->
   <link href="src/assets/vendor/aos/aos.css" rel="stylesheet" />
   <link href="src/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
   <link href="src/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
@@ -26,9 +50,49 @@
   <link href="src/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet" />
   <link href="src/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
 
-  <!-- Template Main CSS File -->
+  <!-- 🎨 Main Styles -->
   <link href="src/assets/css/style.css" rel="stylesheet" />
 
+  <!-- 🌐 Open Graph / Facebook -->
+  <meta property="og:title" content="Lo en terre - Atelier de poterie à Liège" />
+  <meta property="og:description" content="Ateliers de céramique et poterie : tournage, modelage et raku dans un cadre chaleureux et artisanal." />
+  <meta property="og:image" content="https://loenterre.be/src/assets/img/og-cover.jpg" />
+  <meta property="og:url" content="https://loenterre.be/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="fr_BE" />
+
+  <!-- 🐦 Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Lo en terre - Atelier de poterie à Liège" />
+  <meta name="twitter:description" content="Découvrez nos ateliers de poterie, céramique et raku à Liège. Une expérience artisanale et créative." />
+  <meta name="twitter:image" content="https://loenterre.be/src/assets/img/og-cover.jpg" />
+
+  <!-- 🗺️ Structured Data: Local Business Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Lo en terre",
+    "image": "https://loenterre.com/src/assets/img/logo.png",
+    "url": "https://loenterre.com",
+    "telephone": "+32 497 108540",
+    "priceRange": "€€",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Rue Bontemps 96",
+      "addressLocality": "Liège",
+      "postalCode": "4000",
+      "addressCountry": "BE"
+    },
+    "sameAs": [
+      "https://www.facebook.com/lgreday/",
+      "https://www.instagram.com/ceramiqueloenterre/"
+    ],
+    "description": "Atelier de poterie et de céramique à Liège - tournage, modelage, raku et création artisanale."
+  }
+  </script>
+
+  <!-- Template Attribution -->
   <!-- =======================================================
   * Template Name: iPortfolio
   * Updated: Nov 17 2023 with Bootstrap v5.3.2
