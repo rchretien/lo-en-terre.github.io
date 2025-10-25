@@ -1133,31 +1133,48 @@
             fissures générant de magnifiques pièces uniques.
           </p>
 
-          <!-- Grid for raku photos -->
-          <section id="raku-gallery" class="container">
-            <div class="row">
-              <div class="col-lg-3 col-md-6 mb-4">
-                <a href="src/assets/img/speciality/raku/raku1.png" class="glightbox">
-                  <img src="src/assets/img/speciality/raku/raku1_thumb.png" class="img-fluid" loading="lazy" />
-                </a>
+          <!-- Carousel for raku (mobile) -->
+          <div id="raku-carousel" class="carousel slide mb-4 d-lg-none" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="src/assets/img/speciality/raku/raku1.webp" class="d-block w-100 rounded" alt="Raku 1" loading="lazy" />
               </div>
-              <div class="col-lg-3 col-md-6 mb-4">
-                <a href="src/assets/img/speciality/raku/raku2.png" class="glightbox">
-                  <img src="src/assets/img/speciality/raku/raku2_thumb.png" class="img-fluid" loading="lazy" />
-                </a>
+              <div class="carousel-item">
+                <img src="src/assets/img/speciality/raku/raku2.webp" class="d-block w-100 rounded" alt="Raku 2" loading="lazy" />
               </div>
-              <div class="col-lg-3 col-md-6 mb-4">
-                <a href="src/assets/img/speciality/raku/raku3.png" class="glightbox">
-                  <img src="src/assets/img/speciality/raku/raku3_thumb.png" class="img-fluid" loading="lazy" />
-                </a>
+              <div class="carousel-item">
+                <img src="src/assets/img/speciality/raku/raku3.webp" class="d-block w-100 rounded" alt="Raku 3" loading="lazy" />
               </div>
-              <div class="col-lg-3 col-md-6 mb-4">
-                <a href="src/assets/img/speciality/raku/raku4.png" class="glightbox">
-                  <img src="src/assets/img/speciality/raku/raku4_thumb.png" class="img-fluid" loading="lazy" />
-                </a>
+              <div class="carousel-item">
+                <img src="src/assets/img/speciality/raku/raku4.webp" class="d-block w-100 rounded" alt="Raku 4" loading="lazy" />
               </div>
             </div>
-          </section>
+            <button class="carousel-control-prev" type="button" data-bs-target="#raku-carousel" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#raku-carousel" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+
+          <!-- First Row of Images (Visible on Large Screens Only) -->
+          <div class="row g-4 mb-4 d-none d-lg-flex" data-aos="fade-up" data-aos-delay="100">
+            <div class="col-md-6 col-lg-3">
+              <img src="src/assets/img/speciality/raku/raku1.webp" class="img-fluid rounded" alt="Raku 1" loading="lazy" />
+            </div>
+            <div class="col-md-6 col-lg-3">
+              <img src="src/assets/img/speciality/raku/raku2.webp" class="img-fluid rounded" alt="Raku 2" loading="lazy" />
+            </div>
+            <div class="col-md-6 col-lg-3">
+              <img src="src/assets/img/speciality/raku/raku3.webp" class="img-fluid rounded" alt="Raku 3" loading="lazy" />
+            </div>
+            <div class="col-md-6 col-lg-3">
+              <img src="src/assets/img/speciality/raku/raku4.webp" class="img-fluid rounded" alt="Raku 4" loading="lazy" />
+            </div>
+          </div>
+
           <!-- End raku photo grid -->
         </div>
       </div>
