@@ -1033,30 +1033,53 @@
           </p>
 
           <!-- Grid for grès photos -->
-          <section id="gres-gallery" class="container">
-            <div class="row">
-              <div class="col-lg-3 col-md-6 mb-4">
-                <a href="src/assets/img/speciality/gres/gres1.png" class="glightbox">
-                  <img src="src/assets/img/speciality/gres/gres1_thumb.png" class="img-fluid" loading="lazy" />
-                </a>
+          <!-- Carousel for grès (mobile) -->
+          <div id="gres-carousel" class="carousel slide mb-4 d-lg-none" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="src/assets/img/speciality/gres/gres1.webp" class="d-block w-100 rounded" alt="Grès 1" loading="lazy" />
               </div>
-              <div class="col-lg-3 col-md-6 mb-4">
-                <a href="src/assets/img/speciality/gres/gres2.png" class="glightbox">
-                  <img src="src/assets/img/speciality/gres/gres2_thumb.png" class="img-fluid" loading="lazy" />
-                </a>
+              <div class="carousel-item">
+                <img src="src/assets/img/speciality/gres/gres2.webp" class="d-block w-100 rounded" alt="Grès 2" loading="lazy" />
               </div>
-              <div class="col-lg-3 col-md-6 mb-4">
-                <a href="src/assets/img/speciality/gres/gres3.png" class="glightbox">
-                  <img src="src/assets/img/speciality/gres/gres3_thumb.png" class="img-fluid" loading="lazy" />
-                </a>
+              <div class="carousel-item">
+                <img src="src/assets/img/speciality/gres/gres3.webp" class="d-block w-100 rounded" alt="Grès 3" loading="lazy" />
               </div>
-              <div class="col-lg-3 col-md-6 mb-4">
-                <a href="src/assets/img/speciality/gres/gres4.png" class="glightbox">
-                  <img src="src/assets/img/speciality/gres/gres4_thumb.png" class="img-fluid" loading="lazy" />
-                </a>
+              <div class="carousel-item">
+                <img src="src/assets/img/speciality/gres/gres4.webp" class="d-block w-100 rounded" alt="Grès 4" loading="lazy" />
               </div>
             </div>
-          </section>
+            <button class="carousel-control-prev" type="button" data-bs-target="#gres-carousel" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#gres-carousel" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+
+        <!-- First Row of Images (Visible on Large Screens Only) -->
+        <div class="row g-4 mb-4 d-none d-lg-flex" data-aos="fade-up" data-aos-delay="100">
+          <div class="col-md-6 col-lg-3">
+            <img src="src/assets/img/speciality/gres/gres1.webp" class="img-fluid rounded" alt="Gres 1"
+              loading="lazy" />
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <img src="src/assets/img/speciality/gres/gres2.webp" class="img-fluid rounded" alt="Gres 2"
+              loading="lazy" />
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <img src="src/assets/img/speciality/gres/gres3.webp" class="img-fluid rounded" alt="Gres 3"
+              loading="lazy" />
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <img src="src/assets/img/speciality/gres/gres4.webp" class="img-fluid rounded" alt="Gres 4"
+              loading="lazy" />
+          </div>
+        </div>
+
+             
           <!-- End grès photo grid -->
         </div>
 
