@@ -67,10 +67,13 @@
     })
     .then(data => {
       thisForm.querySelector('.loading').classList.remove('d-block');
+      const redirectTarget = formData.get('_next');
+
       if (typeof data === 'object' && data !== null) {
         if (data.ok) {
-          if (data.next) {
-            window.location.href = data.next;
+          const nextUrl = data.next || redirectTarget;
+          if (nextUrl) {
+            window.location.href = nextUrl;
             return;
           }
           thisForm.querySelector('.sent-message').classList.add('d-block');
@@ -83,6 +86,10 @@
 
       const responseText = typeof data === 'string' ? data.trim() : '';
       if (responseText.toLowerCase() === 'ok') {
+        if (redirectTarget) {
+          window.location.href = redirectTarget;
+          return;
+        }
         thisForm.querySelector('.sent-message').classList.add('d-block');
         thisForm.reset(); 
       } else {
