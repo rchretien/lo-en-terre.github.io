@@ -56,19 +56,44 @@
       headers: {'X-Requested-With': 'XMLHttpRequest'}
     })
     .then(response => {
-      if( response.ok ) {
-        return response.text();
-      } else {
+      if( !response.ok ) {
         throw new Error(`${response.status} ${response.statusText} ${response.url}`); 
       }
+      const contentType = response.headers.get('content-type') || '';
+      if (contentType.includes('application/json')) {
+        return response.json();
+      }
+      return response.text();
     })
     .then(data => {
       thisForm.querySelector('.loading').classList.remove('d-block');
-      if (data.trim() == 'OK') {
+      const redirectTarget = formData.get('_next');
+
+      if (typeof data === 'object' && data !== null) {
+        if (data.ok) {
+          const nextUrl = data.next || redirectTarget;
+          if (nextUrl) {
+            window.location.href = nextUrl;
+            return;
+          }
+          thisForm.querySelector('.sent-message').classList.add('d-block');
+          thisForm.reset(); 
+          return;
+        }
+        const errorMessage = data.error || JSON.stringify(data);
+        throw new Error(errorMessage);
+      }
+
+      const responseText = typeof data === 'string' ? data.trim() : '';
+      if (responseText.toLowerCase() === 'ok') {
+        if (redirectTarget) {
+          window.location.href = redirectTarget;
+          return;
+        }
         thisForm.querySelector('.sent-message').classList.add('d-block');
         thisForm.reset(); 
       } else {
-        throw new Error(data ? data : 'Form submission failed and no error message returned from: ' + action); 
+        throw new Error(responseText ? responseText : 'Form submission failed and no error message returned from: ' + action); 
       }
     })
     .catch((error) => {

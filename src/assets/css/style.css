@@ -405,6 +405,49 @@ section {
   margin-bottom: 0;
 }
 
+/* Timeline within About section */
+.timeline {
+  position: relative;
+  margin: 2rem 0;
+  padding: 1rem 0;
+  border-left: 2px solid #f09300;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 2rem;
+  padding-left: 2.5rem;
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+.timeline-icon {
+  position: absolute;
+  left: -1.2rem;
+  top: 0;
+  background: #f09300;
+  color: #fff;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.timeline-content h4 {
+  margin: 0 0 0.5rem;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.timeline-content p {
+  margin: 0;
+  color: #666;
+}
+
 /*--------------------------------------------------------------
 # Facts
 --------------------------------------------------------------*/
