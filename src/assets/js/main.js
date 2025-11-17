@@ -92,6 +92,23 @@
   }
 
   /**
+   * Sticky register button - show after hero section
+   */
+  let stickyRegisterBtn = select(".sticky-register-btn");
+  if (stickyRegisterBtn) {
+    const toggleStickyRegister = () => {
+      // Show button after scrolling past the hero section (approximately 600px)
+      if (window.scrollY > 725) {
+        stickyRegisterBtn.classList.add("visible");
+      } else {
+        stickyRegisterBtn.classList.remove("visible");
+      }
+    };
+    window.addEventListener("load", toggleStickyRegister);
+    onscroll(document, toggleStickyRegister);
+  }
+
+  /**
    * Mobile nav toggle
    */
   on("click", ".mobile-nav-toggle", function (e) {
