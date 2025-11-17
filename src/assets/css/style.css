@@ -1356,3 +1356,40 @@ section {
     padding-right: 20px 15px;
   }
 }
+/*--------------------------------------------------------------
+# Règlement Box Styling
+--------------------------------------------------------------*/
+.reglement-box {
+  background: #fff9f0;
+  border: 2px solid #dd8014;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 20px 0;
+  transition: all 0.3s ease;
+}
+
+.reglement-box:hover {
+  box-shadow: 0 4px 12px rgba(221, 128, 20, 0.2);
+  transform: translateY(-2px);
+}
+
+.reglement-title {
+  color: #dd8014 !important;
+  font-size: 18px !important;
+  font-weight: 700 !important;
+  cursor: pointer;
+  user-select: none;
+}
+
+.reglement-title i {
+  color: #dd8014;
+  transition: transform 0.3s ease;
+}
+
+.reglement-box[open] .reglement-title i {
+  transform: rotate(180deg);
+}
+
+.reglement-title:hover {
+  color: #ec892e !important;
+}
