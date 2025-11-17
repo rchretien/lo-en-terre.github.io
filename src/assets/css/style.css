@@ -20,21 +20,24 @@ summary {
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
-  list-style: none; /* Remove default arrow */
+  list-style: none;
+  /* Remove default arrow */
 }
 
 summary::-webkit-details-marker {
-  display: none; /* Remove default arrow in WebKit browsers */
+  display: none;
+  /* Remove default arrow in WebKit browsers */
 }
 
 summary::after {
   content: "▼";
-  color: #dd8014; /* Orange color matching the theme */
+  color: #dd8014;
+  /* Orange color matching the theme */
   margin-left: 10px;
   transition: transform 0.3s ease;
 }
 
-details[open] > summary::after {
+details[open]>summary::after {
   transform: rotate(180deg);
 }
 
@@ -88,6 +91,105 @@ h6 {
 .back-to-top.active {
   visibility: visible;
   opacity: 1;
+}
+
+/*--------------------------------------------------------------
+# Sticky Register Button
+--------------------------------------------------------------*/
+.sticky-register-btn {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10000;
+  background: #dd8014;
+  color: #fff !important;
+  padding: 14px 28px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 4px 15px rgba(221, 128, 20, 0.4);
+  transition: all 0.3s ease;
+  text-decoration: none !important;
+  white-space: nowrap;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.sticky-register-btn.visible {
+  visibility: visible;
+  opacity: 1;
+}
+
+.sticky-register-btn i {
+  font-size: 20px;
+  color: #fff;
+}
+
+.sticky-register-btn:hover {
+  background: #ec892e;
+  color: #fff !important;
+  transform: translateX(-50%) translateY(-3px);
+  box-shadow: 0 6px 20px rgba(221, 128, 20, 0.5);
+  text-decoration: none !important;
+}
+
+/* Adjust position when back-to-top button is visible */
+.back-to-top.active~.sticky-register-btn {
+  bottom: 75px;
+}
+
+/* Desktop - adjust for sidebar */
+@media (min-width: 1200px) {
+  .sticky-register-btn {
+    left: calc(50% + 150px);
+  }
+}
+
+/* Tablet and mobile */
+@media (max-width: 1199px) {
+  .sticky-register-btn {
+    bottom: 20px;
+  }
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .sticky-register-btn {
+    padding: 12px 20px;
+    font-size: 14px;
+    bottom: 15px;
+  }
+
+  .sticky-register-btn i {
+    font-size: 18px;
+  }
+
+  .back-to-top.active~.sticky-register-btn {
+    bottom: 70px;
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 480px) {
+  .sticky-register-btn span {
+    display: none;
+  }
+
+  .sticky-register-btn {
+    width: 50px;
+    height: 50px;
+    padding: 0;
+    justify-content: center;
+    border-radius: 50%;
+  }
+
+  .sticky-register-btn i {
+    font-size: 24px;
+  }
 }
 
 /*--------------------------------------------------------------
@@ -1253,4 +1355,41 @@ section {
     width: auto;
     padding-right: 20px 15px;
   }
+}
+/*--------------------------------------------------------------
+# Règlement Box Styling
+--------------------------------------------------------------*/
+.reglement-box {
+  background: #fff9f0;
+  border: 2px solid #dd8014;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 20px 0;
+  transition: all 0.3s ease;
+}
+
+.reglement-box:hover {
+  box-shadow: 0 4px 12px rgba(221, 128, 20, 0.2);
+  transform: translateY(-2px);
+}
+
+.reglement-title {
+  color: #dd8014 !important;
+  font-size: 18px !important;
+  font-weight: 700 !important;
+  cursor: pointer;
+  user-select: none;
+}
+
+.reglement-title i {
+  color: #dd8014;
+  transition: transform 0.3s ease;
+}
+
+.reglement-box[open] .reglement-title i {
+  transform: rotate(180deg);
+}
+
+.reglement-title:hover {
+  color: #ec892e !important;
 }
