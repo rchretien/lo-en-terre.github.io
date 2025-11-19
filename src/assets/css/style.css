@@ -159,13 +159,15 @@ h6 {
 /* Mobile responsive */
 @media (max-width: 768px) {
   .sticky-register-btn {
-    padding: 12px 20px;
-    font-size: 14px;
+    padding: 10px 18px;
+    font-size: 13px;
     bottom: 15px;
+    max-width: calc(100vw - 30px);
+    left: 50%;
   }
 
   .sticky-register-btn i {
-    font-size: 18px;
+    font-size: 16px;
   }
 
   .back-to-top.active~.sticky-register-btn {
@@ -175,6 +177,20 @@ h6 {
 
 /* Extra small screens */
 @media (max-width: 480px) {
+  .sticky-register-btn {
+    padding: 8px 16px;
+    font-size: 12px;
+    gap: 6px;
+    max-width: calc(100vw - 20px);
+  }
+
+  .sticky-register-btn i {
+    font-size: 16px;
+  }
+}
+
+/* Very small screens - icon only */
+@media (max-width: 360px) {
   .sticky-register-btn span {
     display: none;
   }
@@ -185,6 +201,7 @@ h6 {
     padding: 0;
     justify-content: center;
     border-radius: 50%;
+    max-width: 50px;
   }
 
   .sticky-register-btn i {
