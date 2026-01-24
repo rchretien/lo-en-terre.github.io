@@ -14,5 +14,5 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy . --project-name=YOUR_PROJECT_NAMEdev-loenterre
+          command: pages deploy . --project-name=dev-loenterre
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
