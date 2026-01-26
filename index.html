@@ -46,6 +46,54 @@
 
   <!-- 🎨 Main Styles -->
   <link href="src/assets/css/style.css" rel="stylesheet" />
+  <style>
+    :root {
+      --dev-banner-height: 56px;
+    }
+
+    .dev-warning-banner {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 10000;
+      background: #b71c1c;
+      color: #fff;
+      text-align: center;
+      padding: 10px 16px;
+      font-weight: 700;
+      font-size: 0.92rem;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      box-shadow: 0 12px 20px rgba(0, 0, 0, 0.18);
+    }
+
+    .dev-warning-banner span {
+      display: block;
+      font-weight: 600;
+      font-size: 0.78rem;
+      letter-spacing: 0.3px;
+      text-transform: none;
+    }
+
+    body.dev-warning-active {
+      padding-top: var(--dev-banner-height);
+    }
+
+    body.dev-warning-active #header {
+      top: var(--dev-banner-height);
+    }
+
+    body.dev-warning-active .mobile-nav-toggle {
+      top: calc(15px + var(--dev-banner-height));
+    }
+
+    @media (max-width: 991px) {
+      :root {
+        --dev-banner-height: 64px;
+      }
+    }
+  </style>
 
   <!-- 🌐 Open Graph / Facebook -->
   <meta property="og:title" content="Lo en terre - Atelier de poterie à Liège" />
@@ -99,6 +147,10 @@
 </head>
 
 <body>
+  <div id="dev-warning" class="dev-warning-banner" role="alert" hidden>
+    Version de test — ne pas utiliser pour des réservations réelles
+    <span>Cette page est uniquement destinée aux essais.</span>
+  </div>
   <!-- ======= Mobile nav toggle button ======= -->
   <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
 
@@ -161,7 +213,7 @@
       <h1>Façonnez vos pièces en céramique</h1>
       <p>Ateliers conviviaux pour tous les niveaux dans un espace chaleureux.</p>
       <div class="hero-cta">
-        <a href="#contact" class="btn btn-lg btn-hero-primary">Réserver un atelier</a>
+        <a href="reserver/" class="btn btn-lg btn-hero-primary">Réserver un atelier</a>
         <a href="#atelier96" class="btn btn-lg btn-hero-secondary">Découvrir l'atelier</a>
       </div>
     </div>
@@ -1318,7 +1370,7 @@
       class="bi bi-arrow-up-short"></i></a>
 
   <!-- Sticky Register Button -->
-  <a href="#contact" class="sticky-register-btn">
+  <a href="reserver/" class="sticky-register-btn">
     <i class="bi bi-calendar-check"></i>
     <span>Réserver un atelier</span>
   </a>
@@ -1330,6 +1382,17 @@
   <script src="src/assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="src/assets/vendor/typed.js/typed.umd.js"></script>
   <script src="src/assets/vendor/php-email-form/validate.js"></script>
+
+  <script>
+    (function () {
+      const devHosts = new Set(["dev.loenterre.com"]);
+      if (!devHosts.has(window.location.hostname)) return;
+      const banner = document.getElementById("dev-warning");
+      if (!banner) return;
+      banner.hidden = false;
+      document.body.classList.add("dev-warning-active");
+    })();
+  </script>
 
   <!-- Template Main JS File -->
   <script src="src/assets/js/main.js"></script>
