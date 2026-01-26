@@ -1,0 +1,25 @@
+name: PR Branch Guard
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  validate-pr:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Enforce PR source branch rules
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          base_ref="${{ github.base_ref }}"
+          head_ref="${{ github.head_ref }}"
+
+          if [[ "$base_ref" == "main" && "$head_ref" != "dev" ]]; then
+            echo "PRs targeting main must come from dev. Current head: $head_ref"
+            exit 1
+          fi
+
+          echo "PR source branch rules satisfied."
