@@ -127,6 +127,36 @@
       margin-bottom: 28px;
     }
 
+    .confirmation-details {
+      border-top: 1px solid #f0e6db;
+      padding-top: 22px;
+      margin-top: 18px;
+    }
+
+    .confirmation-details-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #6c3b17;
+      margin-bottom: 14px;
+    }
+
+    .confirmation-details-grid {
+      display: grid;
+      grid-template-columns: 150px 1fr;
+      gap: 10px 16px;
+      margin: 0;
+    }
+
+    .confirmation-details-grid dt {
+      font-weight: 600;
+      color: #6c3b17;
+    }
+
+    .confirmation-details-grid dd {
+      margin: 0;
+      color: #6b5a4b;
+    }
+
     .confirmation-actions {
       display: flex;
       flex-wrap: wrap;
@@ -148,6 +178,14 @@
     @media (max-width: 575px) {
       .confirmation-card {
         padding: 32px 26px;
+      }
+
+      .confirmation-details-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .confirmation-details-grid dt {
+        margin-top: 8px;
       }
     }
   </style>
@@ -183,6 +221,11 @@
           </div>
         </div>
 
+        <div id="booking-details" class="confirmation-details" hidden>
+          <div class="confirmation-details-title">Détails de la réservation</div>
+          <dl id="booking-details-list" class="confirmation-details-grid"></dl>
+        </div>
+
         <div class="confirmation-actions">
           <a href="../" class="btn btn-warning">
             <i class="bi bi-arrow-left me-2"></i>Retour à l'accueil
@@ -213,7 +256,7 @@
 
     (function () {
       const params = new URLSearchParams(window.location.search);
-      const name = params.get("name") || params.get("inviteeName");
+      const name = params.get("attendeeName") || params.get("name") || params.get("inviteeName");
       if (!name) return;
       const safeName = name.trim();
       if (!safeName) return;
@@ -224,6 +267,115 @@
       nameTarget.textContent = safeName;
       nameWrap.hidden = false;
       fallback.hidden = true;
+    })();
+
+    (function () {
+      const params = new URLSearchParams(window.location.search);
+      const detailsWrap = document.getElementById("booking-details");
+      const detailsList = document.getElementById("booking-details-list");
+      if (!detailsWrap || !detailsList) return;
+
+      const getFirstParam = (keys) => {
+        for (const key of keys) {
+          const value = params.get(key);
+          if (!value) continue;
+          const trimmed = value.trim();
+          if (trimmed) return trimmed;
+        }
+        return "";
+      };
+
+      const toTitle = (value) => {
+        if (!value) return "";
+        const cleaned = value.replace(/[-_]+/g, " ").trim();
+        return cleaned.charAt(0).toUpperCase() + cleaned.slice(1);
+      };
+
+      const parseDate = (value) => {
+        if (!value) return null;
+        const date = new Date(value);
+        if (Number.isNaN(date.getTime())) return null;
+        return date;
+      };
+
+      const capFirst = (value) => {
+        if (!value) return "";
+        return value.charAt(0).toUpperCase() + value.slice(1);
+      };
+
+      const title =
+        getFirstParam(["title"]) ||
+        toTitle(getFirstParam(["type", "eventTypeSlug"]));
+      const startParam = getFirstParam([
+        "startTime",
+        "attendeeStartTime",
+        "hostStartTime",
+      ]);
+      const endParam = getFirstParam(["endTime"]);
+      const location = getFirstParam(["location"]);
+      const host = getFirstParam(["hostName", "user"]);
+      const attendee = getFirstParam(["attendeeName", "name", "inviteeName"]);
+      const email = getFirstParam(["email"]);
+      const reference = getFirstParam(["seatReferenceUid", "uid"]);
+
+      const startDate = parseDate(startParam);
+      const endDate = parseDate(endParam);
+      const dateOptions = {
+        weekday: "long",
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+      };
+      const timeOptions = { hour: "2-digit", minute: "2-digit" };
+      let dateValue = "";
+      let timeValue = "";
+
+      if (startDate) {
+        dateValue = capFirst(startDate.toLocaleDateString("fr-BE", dateOptions));
+        if (endDate) {
+          const sameDay =
+            startDate.getFullYear() === endDate.getFullYear() &&
+            startDate.getMonth() === endDate.getMonth() &&
+            startDate.getDate() === endDate.getDate();
+          if (sameDay) {
+            timeValue = `${startDate.toLocaleTimeString(
+              "fr-BE",
+              timeOptions
+            )} – ${endDate.toLocaleTimeString("fr-BE", timeOptions)}`;
+          } else {
+            timeValue = `${capFirst(
+              startDate.toLocaleDateString("fr-BE", dateOptions)
+            )}, ${startDate.toLocaleTimeString(
+              "fr-BE",
+              timeOptions
+            )} – ${capFirst(
+              endDate.toLocaleDateString("fr-BE", dateOptions)
+            )}, ${endDate.toLocaleTimeString("fr-BE", timeOptions)}`;
+          }
+        }
+      }
+
+      const items = [];
+      if (title) items.push({ label: "Atelier", value: title });
+      if (dateValue) items.push({ label: "Date", value: dateValue });
+      if (timeValue) items.push({ label: "Horaire", value: timeValue });
+      if (location) items.push({ label: "Lieu", value: location });
+      if (host) items.push({ label: "Hôte", value: host });
+      if (attendee) items.push({ label: "Participant", value: attendee });
+      if (email) items.push({ label: "Email", value: email });
+      if (reference) items.push({ label: "Référence", value: reference });
+
+      if (!items.length) return;
+
+      for (const item of items) {
+        const term = document.createElement("dt");
+        term.textContent = item.label;
+        const detail = document.createElement("dd");
+        detail.textContent = item.value;
+        detailsList.append(term, detail);
+      }
+
+      detailsWrap.hidden = false;
     })();
   </script>
 </body>
