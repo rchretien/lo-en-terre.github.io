@@ -157,6 +157,17 @@
       color: #6b5a4b;
     }
 
+    .confirmation-calendar {
+      margin-top: 18px;
+    }
+
+    .confirmation-calendar-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #6c3b17;
+      margin-bottom: 10px;
+    }
+
     .confirmation-actions {
       display: flex;
       flex-wrap: wrap;
@@ -224,6 +235,17 @@
         <div id="booking-details" class="confirmation-details" hidden>
           <div class="confirmation-details-title">Détails de la réservation</div>
           <dl id="booking-details-list" class="confirmation-details-grid"></dl>
+          <div id="calendar-actions" class="confirmation-calendar" hidden>
+            <div class="confirmation-calendar-title">Ajouter au calendrier</div>
+            <div class="confirmation-actions">
+              <a id="calendar-google" class="btn btn-outline-dark" target="_blank" rel="noopener">
+                <i class="bi bi-google me-2"></i>Google Calendar
+              </a>
+              <a id="calendar-ics" class="btn btn-outline-dark">
+                <i class="bi bi-calendar2-week me-2"></i>Fichier ICS
+              </a>
+            </div>
+          </div>
         </div>
 
         <div class="confirmation-actions">
@@ -303,6 +325,19 @@
         return value.charAt(0).toUpperCase() + value.slice(1);
       };
 
+      const maskReference = (value) => {
+        if (!value) return "";
+        const compact = value.replace(/\s+/g, "");
+        if (compact.length <= 10) return value;
+        return `${compact.slice(0, 4)}…${compact.slice(-4)}`;
+      };
+
+      const formatCalendarDate = (date) =>
+        date
+          .toISOString()
+          .replace(/[-:]/g, "")
+          .replace(/\.\d{3}Z$/, "Z");
+
       const title =
         getFirstParam(["title"]) ||
         toTitle(getFirstParam(["type", "eventTypeSlug"]));
@@ -316,7 +351,6 @@
       const host = getFirstParam(["hostName", "user"]);
       const attendee = getFirstParam(["attendeeName", "name", "inviteeName"]);
       const email = getFirstParam(["email"]);
-      const reference = getFirstParam(["seatReferenceUid", "uid"]);
 
       const startDate = parseDate(startParam);
       const endDate = parseDate(endParam);
@@ -363,7 +397,6 @@
       if (host) items.push({ label: "Hôte", value: host });
       if (attendee) items.push({ label: "Participant", value: attendee });
       if (email) items.push({ label: "Email", value: email });
-      if (reference) items.push({ label: "Référence", value: reference });
 
       if (!items.length) return;
 
@@ -376,6 +409,61 @@
       }
 
       detailsWrap.hidden = false;
+
+      if (startDate) {
+        const calendarTitle = title || "Atelier Lo en terre";
+        const calendarStart = formatCalendarDate(startDate);
+        const calendarEnd = formatCalendarDate(
+          endDate && endDate.getTime() > startDate.getTime()
+            ? endDate
+            : new Date(startDate.getTime() + 2 * 60 * 60 * 1000)
+        );
+        const descriptionParts = [];
+        if (attendee) descriptionParts.push(`Participant : ${attendee}`);
+        if (host) descriptionParts.push(`Hôte : ${host}`);
+        const description = descriptionParts.join("\\n");
+
+        const googleLink = document.getElementById("calendar-google");
+        if (googleLink) {
+          const googleParams = new URLSearchParams({
+            action: "TEMPLATE",
+            text: calendarTitle,
+            dates: `${calendarStart}/${calendarEnd}`,
+          });
+          if (location) googleParams.set("location", location);
+          if (description) googleParams.set("details", description);
+          googleLink.href = `https://calendar.google.com/calendar/render?${googleParams.toString()}`;
+        }
+
+        const icsLink = document.getElementById("calendar-ics");
+        if (icsLink) {
+          const icsLines = [
+            "BEGIN:VCALENDAR",
+            "VERSION:2.0",
+            "PRODID:-//Lo en terre//Reservation//FR",
+            "BEGIN:VEVENT",
+            `UID:${calendarStart}@loenterre.com`,
+            `DTSTAMP:${formatCalendarDate(new Date())}`,
+            `DTSTART:${calendarStart}`,
+            `DTEND:${calendarEnd}`,
+            `SUMMARY:${calendarTitle}`,
+            location ? `LOCATION:${location}` : null,
+            description ? `DESCRIPTION:${description}` : null,
+            "END:VEVENT",
+            "END:VCALENDAR",
+          ].filter(Boolean);
+
+          const icsBlob = new Blob([icsLines.join("\r\n")], {
+            type: "text/calendar;charset=utf-8",
+          });
+          const icsUrl = URL.createObjectURL(icsBlob);
+          icsLink.href = icsUrl;
+          icsLink.download = "reservation.ics";
+        }
+
+        const calendarWrap = document.getElementById("calendar-actions");
+        if (calendarWrap) calendarWrap.hidden = false;
+      }
     })();
   </script>
 </body>
