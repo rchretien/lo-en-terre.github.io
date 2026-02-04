@@ -320,7 +320,10 @@
 
         <div class="row g-4">
           <div class="col-md-6 col-lg-4">
-            <a class="category-card category-card--calendar" href="https://cal.com/" target="_blank" rel="noopener">
+            <a class="category-card category-card--calendar"
+              href="https://cal.com/laurence-greday/initiation-a-la-ceramique"
+              data-cal-link="laurence-greday/initiation-a-la-ceramique" data-cal-namespace="initiation-a-la-ceramique"
+              data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'>
               <span class="category-tag"><i class="bi bi-calendar-event"></i>Calendrier</span>
               <h3 class="category-title">Atelier d'initiation</h3>
               <p class="category-desc">Une première immersion pour découvrir la terre et le tournage.</p>
@@ -328,17 +331,18 @@
             </a>
           </div>
           <div class="col-md-6 col-lg-4">
-            <a class="category-card category-card--calendar" href="https://cal.com/" target="_blank" rel="noopener">
+            <a class="category-card category-card--calendar" href="#reservation-form" data-atelier="Atelier bimensuel">
               <span class="category-tag"><i class="bi bi-calendar-event"></i>Calendrier</span>
-              <h3 class="category-title">Atelier bimensuel</h3>
+              <h3 class="category-title">Atelier bimensuel (en dev)</h3>
               <p class="category-desc">Un rendez-vous régulier pour progresser pas à pas.</p>
               <span class="category-cta">Choisir une date <i class="bi bi-arrow-up-right"></i></span>
             </a>
           </div>
           <div class="col-md-6 col-lg-4">
-            <a class="category-card category-card--calendar" href="https://cal.com/" target="_blank" rel="noopener">
+            <a class="category-card category-card--calendar" href="#reservation-form"
+              data-atelier="Atelier hebdomadaire">
               <span class="category-tag"><i class="bi bi-calendar-event"></i>Calendrier</span>
-              <h3 class="category-title">Atelier hebdomadaire</h3>
+              <h3 class="category-title">Atelier hebdomadaire (en dev)</h3>
               <p class="category-desc">Un suivi continu pour approfondir votre pratique.</p>
               <span class="category-cta">Choisir une date <i class="bi bi-arrow-up-right"></i></span>
             </a>
@@ -375,15 +379,15 @@
       <div class="container">
         <div class="section-title">
           <h2>Comment ça se passe</h2>
-          <p>Un parcours simple pour réserver votre moment créatif.</p>
+          <p>Un parcours simple pour réserver votre atelier.</p>
         </div>
 
         <div class="row g-4">
           <div class="col-md-4">
             <div class="step-card">
-              <div class="step-icon"><i class="bi bi-chat-square-text"></i></div>
-              <h3>1. Partagez vos envies</h3>
-              <p>Choisissez le type d'atelier et indiquez vos disponibilités préférées.</p>
+              <div class="step-icon"><i class="bi bi-calendar-event"></i></div>
+              <h3>1. Sélectionnez votre atelier</h3>
+              <p>Choisissez le type d'atelier et la date qui vous convient.</p>
             </div>
           </div>
           <div class="col-md-4">
@@ -396,21 +400,9 @@
           <div class="col-md-4">
             <div class="step-card">
               <div class="step-icon"><i class="bi bi-cup-hot"></i></div>
-              <h3>3. Place à la création</h3>
+              <h3>3. Place à la céramique</h3>
               <p>Rendez-vous à l'atelier pour un moment de partage, de terre et de feu.</p>
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="container">
-        <div class="register-note">
-          <i class="bi bi-lightbulb"></i>
-          <div>
-            <strong>Astuce :</strong> pensez à préciser si vous souhaitez offrir l'atelier en cadeau
-            ou organiser une session privée. Nous adaptons tout pour vous.
           </div>
         </div>
       </div>
@@ -507,7 +499,8 @@
               <div class="form-group">
                 <label for="message">Votre message</label>
                 <textarea class="form-control" name="message" id="message" rows="6"
-                  placeholder="Indiquez vos disponibilités, le niveau du groupe et toute info utile." required></textarea>
+                  placeholder="Indiquez vos disponibilités, le niveau du groupe et toute info utile."
+                  required></textarea>
               </div>
 
               <div class="my-3">
@@ -552,6 +545,36 @@
         });
       });
     })();
+  </script>
+  <script type="text/javascript">
+    (function (C, A, L) {
+      let p = function (a, ar) { a.q.push(ar); };
+      let d = C.document;
+      C.Cal = C.Cal || function () {
+        let cal = C.Cal;
+        let ar = arguments;
+        if (!cal.loaded) {
+          cal.ns = {};
+          cal.q = cal.q || [];
+          d.head.appendChild(d.createElement("script")).src = A;
+          cal.loaded = true;
+        }
+        if (ar[0] === L) {
+          const api = function () { p(api, arguments); };
+          const namespace = ar[1];
+          api.q = api.q || [];
+          if (typeof namespace === "string") {
+            cal.ns[namespace] = cal.ns[namespace] || api;
+            p(cal.ns[namespace], ar);
+            p(cal, ["initNamespace", namespace]);
+          } else p(cal, ar);
+          return;
+        }
+        p(cal, ar);
+      };
+    })(window, "https://app.cal.com/embed/embed.js", "init");
+    Cal("init", "initiation-a-la-ceramique", { origin: "https://app.cal.com" });
+    Cal.ns["initiation-a-la-ceramique"]("ui", { "hideEventTypeDetails": false, "layout": "month_view" });
   </script>
 </body>
 
