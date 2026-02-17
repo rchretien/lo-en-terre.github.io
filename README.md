@@ -1,72 +1,72 @@
-# Lo en terre — Site web de l’atelier de poterie (Liège)
+# Lo en terre — Pottery Workshop Website (Liège)
 
-Site vitrine statique pour l’atelier « Lo en terre » : présentation des activités, pages d’ateliers, formulaire de réservation et informations pratiques. Le site met l’accent sur la simplicité, la performance et un SEO propre.
+Static showcase site for the “Lo en terre” workshop: activities overview, workshop pages, booking form, and practical information. The site focuses on simplicity, performance, and clean SEO.
 
-## Lien de production
-- Domaine principal: https://www.loenterre.com/ (CNAME: `www.loenterre.com`)
-- Domaine de préproduction: `dev.loenterre.com` (active une bannière d’avertissement visuelle)
+## Production Links
+- Primary domain: https://www.loenterre.com/ (CNAME: `www.loenterre.com`)
+- Pre‑production domain: `dev.loenterre.com` (enables a visual warning banner)
 
-## Fonctionnalités clés
-- HTML/CSS/JS pur, basé sur Bootstrap 5 (template iPortfolio adapté).
-- SEO prêt à l’emploi: balises meta, Open Graph, Twitter Card, JSON‑LD `LocalBusiness`.
-- UI: animations AOS, carrousels Swiper, icônes Bootstrap/Boxicons.
-- Réservations: formulaires via Formspree (sans backend maison).
-- Pages dédiées: réservation, confirmation/ICS, remerciement.
+## Key Features
+- Pure HTML/CSS/JS, based on Bootstrap 5 (adapted iPortfolio template).
+- SEO ready: meta tags, Open Graph, Twitter Card, JSON‑LD `LocalBusiness`.
+- UI: AOS animations, Swiper carousels, Bootstrap/Boxicons icons.
+- Bookings: forms via Formspree (no custom backend).
+- Dedicated pages: booking, confirmation/ICS, thank‑you.
 
-## Structure du projet
-- `index.html` — page d’accueil et sections (ateliers, FAQ, galerie, etc.).
-- `reserver/` — formulaire de réservation utilisateur.
-- `reservation-received/` — page de confirmation avec génération d’ICS et lien Google Calendar.
-- `thanks/` — page de remerciement (formulaire de contact générique).
-- `src/assets/css/style.css` — styles principaux.
-- `src/assets/js/main.js` — comportements généraux du template.
-- `src/assets/vendor/*` — dépendances front vendoriées (Bootstrap, AOS, Swiper, etc.).
-- `.github/workflows/` — CI/CD (déploiement Cloudflare Pages, garde‑fou des PR).
+## Project Structure
+- `index.html` — home page and sections (workshops, FAQ, gallery, etc.).
+- `reserver/` — user booking form.
+- `reservation-received/` — confirmation page with ICS generation and Google Calendar link.
+- `thanks/` — thank‑you page (generic contact form).
+- `src/assets/css/style.css` — main styles.
+- `src/assets/js/main.js` — general template behavior.
+- `src/assets/vendor/*` — vendored front‑end deps (Bootstrap, AOS, Swiper, etc.).
+- `.github/workflows/` — CI/CD (Cloudflare Pages deployment, PR guard).
 
-## Démarrage rapide (local)
-Prérequis: Node.js ≥ 16 et npm.
+## Quick Start (local)
+Requirements: Node.js ≥ 16 and npm.
 
 ```bash
 npm install
 npm start
 ```
 
-- Le site est servi par `sirv` sur http://localhost:8000.
-- Les fichiers sont statiques: éditez `index.html` et le contenu sous `src/` puis rechargez.
+- The site is served by `sirv` at http://localhost:8000.
+- Files are static: edit `index.html` and content under `src/`, then reload.
 
-## Déploiement (Cloudflare Pages via GitHub Actions)
-- Flux actuel: un push sur la branche `dev` déclenche `.github/workflows/pages-deployment.yaml` qui exécute:
-  - `cloudflare/wrangler-action@v3` avec la commande `pages deploy . --project-name=dev-loenterre`.
-- Secrets requis côté dépôt GitHub:
-  - `CLOUDFLARE_API_TOKEN` — token avec droits Pages (et Account read).
-  - `CLOUDFLARE_ACCOUNT_ID` — identifiant de compte Cloudflare.
-  - `GITHUB_TOKEN` — fourni automatiquement par GitHub Actions.
-- Domaine: le fichier `CNAME` pointe sur `www.loenterre.com`. Gérez l’attache de domaine et le DNS dans Cloudflare.
+## Deployment (Cloudflare Pages via GitHub Actions)
+- Current flow: pushing to the `dev` branch triggers `.github/workflows/pages-deployment.yaml` which runs:
+  - `cloudflare/wrangler-action@v3` with `pages deploy . --project-name=dev-loenterre`.
+- Required repo secrets:
+  - `CLOUDFLARE_API_TOKEN` — token with Pages rights (and Account read).
+  - `CLOUDFLARE_ACCOUNT_ID` — Cloudflare account identifier.
+  - `GITHUB_TOKEN` — provided automatically by GitHub Actions.
+- Domain: the `CNAME` file points to `www.loenterre.com`. Handle domain attachment and DNS in Cloudflare.
 
-## Branches et contributions
-- PR Guard: toute PR vers `main` doit provenir de `dev` (voir `.github/workflows/pr-branch-guard.yaml`).
-- Proposez vos changements sur une branche issue de `dev`, puis ouvrez une PR vers `dev`.
+## Branches & Contributions
+- PR Guard: any PR targeting `main` must originate from `dev` (see `.github/workflows/pr-branch-guard.yaml`).
+- Create feature branches from `dev`, then open a PR back to `dev`.
 
-## Personnalisation rapide
-- SEO & réseaux sociaux: metadonnées dans l’en‑tête de `index.html` (titre, description, Open Graph/Twitter, JSON‑LD).
-- Images: placez les médias sous `src/assets/img/` et mettez à jour les références.
-- Styles: modifiez `src/assets/css/style.css`.
-- Scripts: adaptez `src/assets/js/main.js` et les scripts inline des pages.
-- Bannière « version de test »: s’affiche uniquement sur l’hôte `dev.loenterre.com` (voir le script en bas des pages).
+## Quick Customization
+- SEO & social: metadata in `index.html` head (title, description, Open Graph/Twitter, JSON‑LD).
+- Images: place media under `src/assets/img/` and update references.
+- Styles: edit `src/assets/css/style.css`.
+- Scripts: adjust `src/assets/js/main.js` and inline page scripts.
+- “Test version” banner: only appears on host `dev.loenterre.com` (see the inline script at page bottom).
 
-## Formulaires
-- Les formulaires de réservation postent vers Formspree (`https://formspree.io/f/mpzvnzag`).
-- La page `reservation-received/` propose:
-  - téléchargement d’un fichier `.ics` généré côté client;
-  - un lien de création d’évènement pour Google Calendar.
+## Forms
+- Booking forms post to Formspree (`https://formspree.io/f/mpzvnzag`).
+- The `reservation-received/` page offers:
+  - download of a client‑generated `.ics` file;
+  - a link to create an event in Google Calendar.
 
-## Développement dans un conteneur (optionnel)
-Le dossier `.devcontainer/` permet d’ouvrir le projet dans un conteneur VS Code/Codespaces avec Node et outils préinstallés (configuration d’exemple issue d’un starter Azure Static Web Apps).
+## Dev Container (optional)
+The `.devcontainer/` folder lets you open the project in a VS Code/Codespaces container with Node and tools preinstalled (example configuration from an Azure Static Web Apps starter).
 
-## Crédits & licence
-- Template de base: iPortfolio par BootstrapMade (voir mentions dans `index.html`).
-- Dépendances tierces sous leurs licences respectives.
-- Contenu, visuels et textes © Lo en terre. Tous droits réservés.
+## Credits & License
+- Base template: iPortfolio by BootstrapMade (see notices in `index.html`).
+- Third‑party dependencies under their respective licenses.
+- Content, visuals, and texts © Lo en terre. All rights reserved.
 
 ---
-Suggestions, corrections ou demandes? Ouvrez une issue ou une PR sur ce dépôt.
+Suggestions, fixes, or requests? Open an issue or PR on this repository.
