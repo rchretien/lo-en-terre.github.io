@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="fr-BE">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Commander un bon cadeau | Lo en terre</title>
+  <meta name="description"
+    content="Commandez un bon cadeau Lo en terre: initiation, atelier privé, formule duo ou montant libre. Offrez une expérience créative à Liège." />
+  <link rel="canonical" href="https://loenterre.com/bon-cadeau/" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" />
+
+  <link href="../src/assets/img/logo.png" rel="icon" />
+  <link href="../src/assets/img/logo.png" rel="apple-touch-icon" />
+
+  <link rel="stylesheet" href="../src/assets/vendor/bootstrap/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="../src/assets/vendor/bootstrap-icons/bootstrap-icons.css" />
+  <link rel="stylesheet" href="../src/assets/css/style.css" />
+
+  <style>
+    :root {
+      --dev-banner-height: 56px;
+    }
+
+    body {
+      background: #f7f3ef;
+    }
+
+    .dev-warning-banner {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 999;
+      background: #b71c1c;
+      color: #fff;
+      text-align: center;
+      padding: 10px 16px;
+      font-weight: 700;
+      font-size: 0.92rem;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      box-shadow: 0 12px 20px rgba(0, 0, 0, 0.18);
+    }
+
+    .dev-warning-banner span {
+      display: block;
+      font-weight: 600;
+      font-size: 0.78rem;
+      letter-spacing: 0.3px;
+      text-transform: none;
+    }
+
+    body.dev-warning-active {
+      padding-top: var(--dev-banner-height);
+    }
+
+    body.dev-warning-active .gift-header {
+      top: var(--dev-banner-height);
+    }
+
+    .gift-header {
+      background: #fff;
+      border-bottom: 1px solid #f0e6db;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .gift-header .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 16px 0;
+    }
+
+    .gift-brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      color: #6c3b17;
+      font-weight: 700;
+      text-decoration: none;
+      font-size: 1.1rem;
+    }
+
+    .gift-brand img {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid #f3dcc2;
+    }
+
+    .gift-hero {
+      background: linear-gradient(120deg, rgba(108, 59, 23, 0.92), rgba(221, 128, 20, 0.84)),
+        url("../src/assets/img/workshop/overview5.webp") center / cover no-repeat;
+      color: #fff;
+      padding: 80px 0 90px;
+    }
+
+    .gift-hero .hero-card {
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: 18px;
+      padding: 32px;
+      max-width: 680px;
+      box-shadow: 0 24px 50px rgba(0, 0, 0, 0.18);
+    }
+
+    .gift-hero h1 {
+      color: #fff;
+      font-size: clamp(2.2rem, 4vw, 3.2rem);
+      margin-bottom: 12px;
+    }
+
+    .gift-hero p {
+      color: rgba(255, 255, 255, 0.92);
+      font-size: 1.08rem;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .hero-meta .meta-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(0, 0, 0, 0.3);
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+
+    .gift-options {
+      padding: 60px 0 20px;
+    }
+
+    .gift-option-card {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      background: #fff;
+      border-radius: 18px;
+      padding: 24px;
+      border: 1px solid #f0e6db;
+      box-shadow: 0 18px 38px rgba(108, 59, 23, 0.08);
+      text-decoration: none;
+      color: #4a2a12;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    }
+
+    .gift-option-card:focus-visible,
+    .gift-option-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 26px 48px rgba(108, 59, 23, 0.14);
+      border-color: #dd8014;
+      color: #4a2a12;
+    }
+
+    .gift-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      align-self: flex-start;
+      font-size: 0.75rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: #f7e8d4;
+      color: #6c3b17;
+    }
+
+    .gift-option-title {
+      font-size: 1.2rem;
+      margin: 14px 0 8px;
+      color: #6c3b17;
+    }
+
+    .gift-option-desc {
+      margin-bottom: 10px;
+      color: #6b5a4b;
+    }
+
+    .gift-option-price {
+      font-weight: 700;
+      color: #dd8014;
+      margin-bottom: 14px;
+    }
+
+    .gift-option-cta {
+      margin-top: auto;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 600;
+      color: #6c3b17;
+    }
+
+    .gift-process {
+      padding: 40px 0;
+    }
+
+    .step-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 24px;
+      border: 1px solid #f0e6db;
+      box-shadow: 0 18px 40px rgba(108, 59, 23, 0.08);
+      height: 100%;
+    }
+
+    .step-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      background: #dd8014;
+      color: #fff;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+    }
+
+    .step-card h3 {
+      margin-top: 14px;
+      font-size: 1.2rem;
+      color: #6c3b17;
+    }
+
+    .form-note {
+      background: #fff8f0;
+      border: 1px solid #f2d7b8;
+      border-radius: 16px;
+      padding: 16px 18px;
+      color: #6c3b17;
+      margin-top: 20px;
+    }
+
+    .conditional-field[hidden] {
+      display: none !important;
+    }
+
+    @media (max-width: 991px) {
+      :root {
+        --dev-banner-height: 64px;
+      }
+
+      .gift-header .container {
+        padding: 14px 12px;
+      }
+
+      .gift-hero {
+        padding: 70px 0 80px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="dev-warning" class="dev-warning-banner" role="alert" hidden>
+    Version de test — ne pas utiliser pour des réservations réelles
+    <span>Cette page est uniquement destinée aux essais.</span>
+  </div>
+
+  <header class="gift-header">
+    <div class="container">
+      <a class="gift-brand" href="../">
+        <img src="../src/assets/img/logo.png" alt="Logo de Lo en terre" loading="lazy" />
+        <span>Lo en terre</span>
+      </a>
+      <div class="d-flex flex-wrap gap-2 justify-content-end">
+        <a href="../reserver/" class="btn btn-warning btn-sm">
+          <i class="bi bi-calendar-check me-2"></i>Réserver un atelier
+        </a>
+        <a href="../" class="btn btn-outline-dark btn-sm">
+          <i class="bi bi-arrow-left me-2"></i>Retour à l'accueil
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="gift-hero">
+      <div class="container">
+        <div class="hero-card">
+          <span class="hero-kicker">Bon cadeau</span>
+          <h1>Commander un bon cadeau</h1>
+          <p>
+            Offrez un moment de céramique à l'atelier 96. Choisissez la formule qui vous convient
+            et personnalisez votre bon cadeau en quelques minutes.
+          </p>
+          <div class="hero-meta">
+            <div class="meta-item"><i class="bi bi-gift"></i>Formules personnalisables</div>
+            <div class="meta-item"><i class="bi bi-envelope-paper"></i>Envoi par email ou retrait</div>
+            <div class="meta-item"><i class="bi bi-geo-alt"></i>Liège, atelier 96</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="gift-options">
+      <div class="container">
+        <div class="section-title">
+          <h2>Choisissez votre formule</h2>
+          <p>Sélectionnez une possibilité puis complétez le formulaire pour finaliser la commande.</p>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-3">
+            <a class="gift-option-card" href="#gift-form" data-bon="Initiation (1 personne)">
+              <span class="gift-badge"><i class="bi bi-stars"></i>Découverte</span>
+              <h3 class="gift-option-title">Initiation 1 personne</h3>
+              <p class="gift-option-desc">Une première immersion de 3h pour découvrir la terre et le tournage.</p>
+              <p class="gift-option-price">40€</p>
+              <span class="gift-option-cta">Choisir cette formule <i class="bi bi-arrow-right"></i></span>
+            </a>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <a class="gift-option-card" href="#gift-form" data-bon="Initiation duo (2 personnes)">
+              <span class="gift-badge"><i class="bi bi-hearts"></i>Partage</span>
+              <h3 class="gift-option-title">Initiation duo</h3>
+              <p class="gift-option-desc">Une expérience créative à deux, idéale pour un cadeau complice.</p>
+              <p class="gift-option-price">80€</p>
+              <span class="gift-option-cta">Choisir cette formule <i class="bi bi-arrow-right"></i></span>
+            </a>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <a class="gift-option-card" href="#gift-form" data-bon="Atelier privé (3h)">
+              <span class="gift-badge"><i class="bi bi-person-heart"></i>Privé</span>
+              <h3 class="gift-option-title">Atelier privé</h3>
+              <p class="gift-option-desc">Un accompagnement individuel de 3h pour une attention unique.</p>
+              <p class="gift-option-price">150€</p>
+              <span class="gift-option-cta">Choisir cette formule <i class="bi bi-arrow-right"></i></span>
+            </a>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <a class="gift-option-card" href="#gift-form" data-bon="Montant libre">
+              <span class="gift-badge"><i class="bi bi-wallet2"></i>Flexible</span>
+              <h3 class="gift-option-title">Montant libre</h3>
+              <p class="gift-option-desc">Vous choisissez le budget. Nous adaptons la formule ensuite.</p>
+              <p class="gift-option-price">Montant au choix</p>
+              <span class="gift-option-cta">Choisir cette formule <i class="bi bi-arrow-right"></i></span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="gift-process">
+      <div class="container">
+        <div class="section-title">
+          <h2>Comment ça fonctionne</h2>
+          <p>Un parcours simple pour préparer votre cadeau.</p>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="step-card">
+              <div class="step-icon"><i class="bi bi-ui-checks-grid"></i></div>
+              <h3>1. Choisissez une formule</h3>
+              <p>Sélectionnez le format qui correspond le mieux à la personne à qui vous l'offrez.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="step-card">
+              <div class="step-icon"><i class="bi bi-pencil-square"></i></div>
+              <h3>2. Personnalisez le bon</h3>
+              <p>Ajoutez le nom du bénéficiaire, un message et le mode de remise souhaité.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="step-card">
+              <div class="step-icon"><i class="bi bi-envelope-check"></i></div>
+              <h3>3. Confirmation rapide</h3>
+              <p>Nous vous recontactons pour confirmer les détails et finaliser la commande.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="gift-form" class="contact">
+      <div class="container">
+        <div class="section-title">
+          <h2>Formulaire de commande</h2>
+          <p>Remplissez ce formulaire et nous revenons vers vous sous 48h.</p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-5 d-flex align-items-stretch">
+            <div class="info">
+              <div class="address">
+                <i class="bi bi-geo-alt"></i>
+                <h4>Adresse :</h4>
+                <p>96, rue Bontemps, 4000 Liège, Belgique</p>
+              </div>
+
+              <div class="email">
+                <i class="bi bi-envelope"></i>
+                <h4>Email :</h4>
+                <p>
+                  <a href="mailto:laurence.greday@gmail.com">laurence.greday@gmail.com</a>
+                </p>
+              </div>
+
+              <div class="phone">
+                <i class="bi bi-phone"></i>
+                <h4>Téléphone :</h4>
+                <p>+32 497 108540</p>
+              </div>
+
+              <div class="address">
+                <i class="bi bi-clock"></i>
+                <h4>Traitement :</h4>
+                <p>Réponse sous 48h, du mardi au samedi.</p>
+              </div>
+
+              <div class="form-note">
+                <i class="bi bi-info-circle me-2"></i>
+                Le bon cadeau est préparé sur mesure. La date de l'atelier est fixée ensuite selon disponibilités.
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
+            <form action="https://formspree.io/f/mpzvnzag" method="post" role="form" class="php-email-form">
+              <input type="hidden" name="_next" value="/thanks" />
+              <input type="hidden" name="subject" value="Commande de bon cadeau" />
+
+              <div class="row">
+                <div class="form-group col-md-6">
+                  <label for="name">Votre nom</label>
+                  <input type="text" name="name" class="form-control" id="name" autocomplete="name" required />
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="email">Votre adresse email</label>
+                  <input type="email" class="form-control" name="email" id="email" autocomplete="email" required />
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="form-group col-md-6">
+                  <label for="phone">Téléphone</label>
+                  <input type="tel" class="form-control" name="phone" id="phone" autocomplete="tel" />
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="delivery_date">Date souhaitée de réception</label>
+                  <input type="text" class="form-control" name="date_reception" id="delivery_date"
+                    placeholder="Ex : avant le 14/02" required />
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="form-group col-md-6">
+                  <label for="gift_type">Type de bon cadeau</label>
+                  <select class="form-control" name="type_bon_cadeau" id="gift_type" required>
+                    <option value="" disabled selected>Choisir une formule</option>
+                    <option>Initiation (1 personne)</option>
+                    <option>Initiation duo (2 personnes)</option>
+                    <option>Atelier privé (3h)</option>
+                    <option>Montant libre</option>
+                  </select>
+                </div>
+                <div class="form-group col-md-6 conditional-field" id="free_amount_wrap" hidden>
+                  <label for="free_amount">Montant libre (€)</label>
+                  <input type="number" class="form-control" name="montant_libre" id="free_amount" min="20"
+                    step="5" placeholder="Ex : 60" />
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="form-group col-md-6">
+                  <label for="recipient_name">Nom du bénéficiaire</label>
+                  <input type="text" class="form-control" name="beneficiaire" id="recipient_name" required />
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="occasion">Occasion</label>
+                  <input type="text" class="form-control" name="occasion" id="occasion"
+                    placeholder="Anniversaire, merci, surprise..." />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="delivery_mode">Mode de remise</label>
+                <select class="form-control" name="mode_remise" id="delivery_mode" required>
+                  <option value="" disabled selected>Choisir un mode</option>
+                  <option>Envoi par email (PDF)</option>
+                  <option>Retrait à l'atelier</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="gift_message">Message sur le bon cadeau</label>
+                <textarea class="form-control" name="message_bon" id="gift_message" rows="4"
+                  placeholder="Ex : Joyeux anniversaire Julie, profite bien de ce moment créatif !"></textarea>
+              </div>
+
+              <div class="form-group">
+                <label for="message">Informations complémentaires</label>
+                <textarea class="form-control" name="message" id="message" rows="5"
+                  placeholder="Indiquez ici toute demande particulière utile pour préparer le bon cadeau."></textarea>
+              </div>
+
+              <div class="my-3">
+                <div class="loading">Loading</div>
+                <div class="error-message"></div>
+                <div class="sent-message">Votre demande a bien été envoyée. Merci !</div>
+              </div>
+              <div class="text-center">
+                <button type="submit">Commander le bon cadeau <i class="bi bi-send"></i></button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="../src/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../src/assets/vendor/php-email-form/validate.js"></script>
+  <script>
+    (function () {
+      const devHosts = new Set(["dev.loenterre.com"]);
+      if (!devHosts.has(window.location.hostname)) return;
+      const banner = document.getElementById("dev-warning");
+      if (!banner) return;
+      banner.hidden = false;
+      document.body.classList.add("dev-warning-active");
+    })();
+
+    (function () {
+      const giftTypeSelect = document.getElementById("gift_type");
+      const freeAmountWrap = document.getElementById("free_amount_wrap");
+      const freeAmountInput = document.getElementById("free_amount");
+
+      if (!giftTypeSelect || !freeAmountWrap || !freeAmountInput) return;
+
+      const syncFreeAmount = () => {
+        const isFreeAmount = giftTypeSelect.value === "Montant libre";
+        freeAmountWrap.hidden = !isFreeAmount;
+        freeAmountInput.required = isFreeAmount;
+        if (!isFreeAmount) {
+          freeAmountInput.value = "";
+        }
+      };
+
+      syncFreeAmount();
+
+      giftTypeSelect.addEventListener("change", syncFreeAmount);
+
+      document.querySelectorAll("[data-bon]").forEach((card) => {
+        card.addEventListener("click", () => {
+          const value = card.getAttribute("data-bon");
+          if (value) {
+            giftTypeSelect.value = value;
+            syncFreeAmount();
+          }
+        });
+      });
+    })();
+  </script>
+</body>
+
+</html>
