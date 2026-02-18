@@ -971,6 +971,14 @@ section {
   font-size: 14px;
 }
 
+.services .sublist {
+  margin-left: 0;
+  padding-left: 12px;
+  line-height: 24px;
+  font-size: 14px;
+  list-style-position: outside;
+}
+
 /*--------------------------------------------------------------
 # Testimonials
 --------------------------------------------------------------*/

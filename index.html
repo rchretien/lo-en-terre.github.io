@@ -46,6 +46,54 @@
 
   <!-- 🎨 Main Styles -->
   <link href="src/assets/css/style.css" rel="stylesheet" />
+  <style>
+    :root {
+      --dev-banner-height: 56px;
+    }
+
+    .dev-warning-banner {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 10000;
+      background: #b71c1c;
+      color: #fff;
+      text-align: center;
+      padding: 10px 16px;
+      font-weight: 700;
+      font-size: 0.92rem;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      box-shadow: 0 12px 20px rgba(0, 0, 0, 0.18);
+    }
+
+    .dev-warning-banner span {
+      display: block;
+      font-weight: 600;
+      font-size: 0.78rem;
+      letter-spacing: 0.3px;
+      text-transform: none;
+    }
+
+    body.dev-warning-active {
+      padding-top: var(--dev-banner-height);
+    }
+
+    body.dev-warning-active #header {
+      top: var(--dev-banner-height);
+    }
+
+    body.dev-warning-active .mobile-nav-toggle {
+      top: calc(15px + var(--dev-banner-height));
+    }
+
+    @media (max-width: 991px) {
+      :root {
+        --dev-banner-height: 64px;
+      }
+    }
+  </style>
 
   <!-- 🌐 Open Graph / Facebook -->
   <meta property="og:title" content="Lo en terre - Atelier de poterie à Liège" />
@@ -99,6 +147,10 @@
 </head>
 
 <body>
+  <div id="dev-warning" class="dev-warning-banner" role="alert" hidden>
+    Version de test — ne pas utiliser pour des réservations réelles
+    <span>Cette page est uniquement destinée aux essais.</span>
+  </div>
   <!-- ======= Mobile nav toggle button ======= -->
   <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
 
@@ -132,7 +184,11 @@
             <a href="#faq" class="nav-link scrollto"><i class="bi bi-question-circle"></i> <span>FAQ</span></a>
           </li>
           <li>
-            <a href="#services" class="nav-link scrollto"><i class="bx bx-server"></i> <span>Services</span></a>
+            <a href="#bon-cadeau" class="nav-link scrollto"><i class="bi bi-gift"></i> <span>Bon cadeau</span></a>
+          </li>
+          <li>
+            <a href="#commande-sur-mesure" class="nav-link scrollto"><i class="bi bi-sliders2"></i>
+              <span>Commande sur mesure</span></a>
           </li>
           <li>
             <a href="#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>A propos</span></a>
@@ -161,7 +217,7 @@
       <h1>Façonnez vos pièces en céramique</h1>
       <p>Ateliers conviviaux pour tous les niveaux dans un espace chaleureux.</p>
       <div class="hero-cta">
-        <a href="#contact" class="btn btn-lg btn-hero-primary">Réserver un atelier</a>
+        <a href="reserver/" class="btn btn-lg btn-hero-primary">Réserver un atelier</a>
         <a href="#atelier96" class="btn btn-lg btn-hero-secondary">Découvrir l'atelier</a>
       </div>
     </div>
@@ -187,9 +243,9 @@
           <div class="col-lg-6 col-md-6 icon-box" data-aos="fade-up">
             <div class="icon"><i class="bi bi-mortarboard"></i></div>
             <details>
-              <summary class="title">Atelier d'initiation à la poterie</summary>
+              <summary class="title">Atelier d'initiation à la céramique</summary>
               <p class="description">
-                Explorez le monde captivant de la poterie à travers nos ateliers
+                Explorez le monde captivant de la céramique à travers nos ateliers
                 d'initiation. Plongez dans l'art millénaire de la céramique tout
                 en découvrant les bases de la manipulation de l'argile, du tournage
                 pour donner vie à vos idées les plus créatives. L'initiation a pour
@@ -206,41 +262,67 @@
           <div class="col-lg-6 col-md-6 icon-box" data-aos="fade-up">
             <div class="icon"><i class="bi bi-calendar-event"></i></div>
             <details>
-              <summary class="title">Ateliers hebdomadaires</summary>
+              <summary class="title">Ateliers hebdomadaires et bimensuels</summary>
               <p class="description">
-                Ateliers de travail de la terre à raison de 4 séances de 3 heures par mois en groupe,
-                pour créer et développer ses projets céramiques, expérimenter différentes
-                techniques : modelage, estampage, plaque, colombin, pincé, tour
-                (le coulage n'est pas disponible, mais la sculpture est possible sous conditions),
-                et découvrir la vie d'un atelier en participant à toutes les étapes nécessaires. <br>
-                <strong>Prix :</strong> 115€/mois (hors cuisson).
+                Ateliers de travail de la terre en groupe pour créer et développer ses projets
+                céramiques, expérimenter différentes techniques : modelage, estampage, plaque,
+                colombin, pincé, tour (le coulage n'est pas disponible, mais la sculpture est
+                possible sous conditions), et découvrir la vie d'un atelier en participant à
+                toutes les étapes nécessaires. Deux formules sont possibles : 4 séances de 3
+                heures par mois pour une pratique soutenue, ou 2 séances de 3 heures par mois
+                pour une approche plus flexible et un rythme personnalisé. <br>
+                <strong>Prix :</strong> 115€/mois pour 4 séances (hors cuisson). <br>
+                <strong>Prix :</strong> 70€/mois pour 2 séances (hors cuisson).
               </p>
             </details>
           </div>
           <div class="col-lg-6 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
-            <div class="icon"><i class="bi bi-emoji-smile"></i></div>
+            <div class="icon"><i class="bi bi-palette"></i></div>
             <details>
-              <summary class="title">Atelier enfants</summary>
+              <summary class="title">Stages</summary>
               <p class="description">
-                L'atelier consiste en une séance de 2h30 pour faire découvrir
-                la magie de la terre à votre enfant en laissant libre court à
-                sa créativité. Les ateliers sont accessibles à partir de 8 ans
-                et sont organisés sur demande.<br>
-                <strong>Prix :</strong> 30€ pour 2h30 (hors cuisson).
+                Des stages ponctuels pour s'initier, progresser et prendre le temps de créer,
+                avec un accompagnement pas à pas dans une ambiance conviviale. Deux types de
+                stage sont proposés :
               </p>
+              <ul class="description">
+                <li>
+                  Stage découverte :
+                  <ul class="sublist">
+                    <li>Réalisation d'une sphère.</li>
+                    <li>Réalisation d'un ensemble petit-déjeuner.</li>
+                    <li>Réalisation d'un ensemble apéritif.</li>
+                  </ul>
+                  <p><strong>Prix du stage découverte :</strong> 100€ à 115€ (selon la taille de la sphère) pour 3 × 2
+                    heures, cuisson comprise.</p>
+                </li>
+                <li>
+                  Stage de tournage - niveau débutant.
+                  <ul class="sublist">
+                    <li>appréhender le tournage : 2 × 5h30</li>
+                    <li>appréhender le tournassage : 2 × 5h30</li>
+                    <li>appréhender l'émaillage : 1 × 3h</li>
+                  </ul>
+                  <p><strong>Prix du stage de tournage :</strong> 300€ (hors cuisson)</p>
+                </li>
+              </ul>
             </details>
           </div>
           <div class="col-lg-6 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
             <div class="icon"><i class="bi bi-calendar2-week"></i></div>
             <details>
-              <summary class="title">Ateliers bimensuels</summary>
+              <summary class="title">Ateliers personnalisés</summary>
               <p class="description">
-                Une formule flexible avec deux séances de 3 heures par mois en groupe
-                pour découvrir et progresser dans l'art de la céramique à votre rythme.
-                Idéal pour celles et ceux qui souhaitent maintenir une pratique régulière
-                tout en gardant plus de flexibilité. <br>
-                <strong>Prix :</strong> 70€/mois (hors cuisson).
+                Des formats sur mesure pour partager un moment créatif, s'initier ou approfondir une technique, en
+                petit groupe et à votre rythme.
               </p>
+              <ul class="description">
+                <li><strong>Ateliers enfants :</strong> 30€ pour 2h30, 3 enfants minimum (cuisson non comprise, mais un
+                  forfait est proposé).</li>
+                <li><strong>Ateliers parents-enfants :</strong> 30€ pour 2h30, 3 personnes minimum (hors cuisson).</li>
+                <li><strong>Groupes privés :</strong> 150€ (hors cuisson) pour 4 personnes ou 220€ (hors cuisson) pour 6
+                  personnes afin de privatiser l'atelier pour 3 heures.</li>
+              </ul>
             </details>
           </div>
         </div>
@@ -422,7 +504,7 @@
         <hr>
 
         <div class="table-responsive">
-          Voici les tarifs des cuissons (hors atelier) :
+          Tarif des cuissons pour les participants :
           <br><br>
           <table class="table table-bordered text-center">
             <thead class="table-light">
@@ -445,12 +527,13 @@
               </tr>
               <tr>
                 <td>Dégourdi + émaillé et HT</td>
-                <td>20€/kilo</td>
+                <td>20€/kg</td>
                 <td>—</td>
               </tr>
             </tbody>
           </table>
-          Note : le poids est mesuré avant cuisson, pièces cassées ou non conformes au projet inclus.
+          Note : les pièces sont pesées après cuisson et payables même si ces dernières ne correspondent pas aux
+          attentes (laides, cassées, ...). L'atelier 96 ne réalise pas de cuissons pour les externes.
         </div>
 
         <hr>
@@ -564,11 +647,9 @@
           <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
             <details>
               <summary class="title"><strong>📅 Comment réserver un atelier ?</strong></summary>
-              <p class="description">
-                Via le formulaire de contact, en nous envoyant un email ou en
-                nous écrivant sur Instagram/Facebook ou encore en téléphonant
-                au +32 497 108540. On vous répond vite !
-              </p>
+              <p class="description"><span>Via la page d'<a href="reserver/">inscription</a>, le formulaire de contact,
+                  en nous envoyant un email ou en nous écrivant sur Instagram/Facebook ou encore en téléphonant au +32
+                  497 108540. On vous répond vite !</span></p>
             </details>
           </div>
           <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
@@ -644,186 +725,61 @@
     </section>
     <!-- End FAQ -->
 
-    <!-- ======= Testimonials Section ======= -->
-    <section id="testimonials" class="testimonials">
+    <!-- ======= Bon Cadeau Section ======= -->
+    <section id="bon-cadeau" class="services services-cta">
       <div class="container">
         <div class="section-title">
-          <h2>Ce que nos clients disent de nous</h2>
+          <h2>Bon cadeau</h2>
           <p>
-            Les coulisses de nos clients : leurs expériences uniques lors de nos <strong>ateliers de
-              poterie</strong> vous donneront l'envie irrésistible de vous lancer à votre tour. Et
-            parce que la passion se prolonge, découvrez aussi comment nos pièces façonnées
-            à la main ont séduit celles et ceux qui les ont adoptées 😍
-          </p>
-        </div>
-
-        <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <div class="testimonial-item" data-aos="fade-up">
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Depuis que j'ai découvert "Lo en terre", je suis fan
-                  inconditionnelle. Laurence travaille avec ses mains mais
-                  surtout avec son âme. Les pots ont une histoire... Je ne
-                  peux que conseiller vivement de découvrir Lo et ses
-                  poteries, Lo et les histoires de ses poteries.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-                <img src="src/assets/img/testimonials/nathalie.jpg" class="testimonial-img" alt="Portrait de Nathalie"
-                  loading="lazy" />
-                <h3>Nathalie</h3>
-              </div>
-            </div>
-            <!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item" data-aos="fade-up" data-aos-delay="100">
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Lo en terre est pour ma part une belle découverte. Son
-                  professionnalisme, sa disponibilité et son écoute pour
-                  réaliser les pièces qui me correspondent m'a agréablement
-                  surprise ! J'ai pu également découvrir un atelier poterie
-                  réalisée chez moi avec une dizaine d'enfants et tout était
-                  top, ils étaient heureux de mettre en œuvre leur créativité.
-                  Je la recommande +++
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-                <img src="src/assets/img/testimonials/adeline.jpg" class="testimonial-img" alt="Portrait d'Adeline"
-                  loading="lazy" />
-                <h3>Adeline</h3>
-              </div>
-            </div>
-            <!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item" data-aos="fade-up" data-aos-delay="200">
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Je suis tombée sous le charme du travail de Laurence. Toutes
-                  ses pièces racontent une histoire et ont une identité
-                  propre. C'est un réel plaisir d'apprécier son travail
-                  d'artisan au quotidien à travers les pièces qui décorent
-                  merveilleusement mon interieur ou celui de mes proches.
-                  Laurence s'applique à mettre en oeuvre mes souhaits sans
-                  manquer de conseils judicieux. Lo en terre c est avant tout
-                  l'expression de son âme d'artiste.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-                <img src="src/assets/img/testimonials/mary.png" class="testimonial-img" alt="Portrait de Mary"
-                  loading="lazy" />
-                <h3>Mary</h3>
-              </div>
-            </div>
-            <!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item" data-aos="fade-up" data-aos-delay="300">
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Merci beaucoup, Laurence pour cette matinée plus que
-                  bénéfique. J'avais arrêté de tourner depuis un moment et tu
-                  m'as donné l'envie de recommencer. J'ai aimé ton
-                  enthousiasme, ta simplicité et surtout ta façon d'apprendre.
-                  Grâce à cette matinée à tes côtés, je fais maintenant partie
-                  d'un atelier de poterie!
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-                <img src="src/assets/img/testimonials/emilie.png" class="testimonial-img" alt="Portrait d'Emilie"
-                  loading="lazy" />
-                <h3>Emilie</h3>
-              </div>
-            </div>
-            <!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item" data-aos="fade-up" data-aos-delay="400">
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Un moment exceptionnel. Laurence nous explique, nous conseille,
-                  nous apprend à travailler la terre avec enthousiasme et de manière
-                  didactique. Un vrai plaisir. Et tout cela dans une ambiance
-                  sympathique et chaleureuse. Merci à toi Laurence !
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-                <img src="src/assets/img/testimonials/laurent.jpg" class="testimonial-img" alt="Portrait de Laurent"
-                  loading="lazy" />
-                <h3>Laurent</h3>
-              </div>
-            </div>
-            <!-- End testimonial item -->
-          </div>
-          <div class="swiper-pagination"></div>
-        </div>
-      </div>
-    </section>
-    <!-- End Testimonials Section -->
-
-    <!-- ======= Services Section ======= -->
-    <section id="services" class="services section-bg">
-      <div class="container">
-        <div class="section-title">
-          <h2>Services</h2>
-          <p>
-            🎁 Offrez un moment créatif et unique grâce à nos chèques
-            cadeaux personnalisables, parfaits pour faire plaisir en toute
-            occasion. ✨ Nous réalisons également des pièces sur mesure,
-            façonnées selon vos envies, pour apporter une touche artisanale
-            et authentique à votre intérieur. 🏺
+            Offrez une expérience créative à l'atelier 96 avec un bon cadeau
+            personnalisable, idéal pour une attention originale et artisanale.
           </p>
         </div>
 
         <div class="row">
-          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
-            <div class="icon"><i class="bi bi-bag-heart"></i></div>
-            <details>
-              <summary class="title">Commandez une de nos pièces</summary>
-              <p class="description">
-                Craquez pour l'une de nos créations déjà façonnées ! Choisissez
-                parmi notre sélection de pièces uniques, chacune portant le
-                sceau de l'artisanat, de la créativité et de l'authenticité.
-                Faites l'acquisition d'une pièce prête à rejoindre votre foyer,
-                ajoutant une touche artistique à votre quotidien avec
-                l'authenticité de la poterie artisanale.
-              </p>
-            </details>
-          </div>
-          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="200">
-            <div class="icon"><i class="bi bi-sliders2"></i></div>
-            <details>
-              <summary class="title">Commandez une pièce sur mesure</summary>
-              <p class="description">
-                Votre esprit regorge d'idées ? Partagez-les avec nous !
-                Concevons ensemble une pièce entièrement personnalisée, façonnée
-                selon vos désirs et vos spécifications. Laissez-nous donner vie
-                à votre vision, créant ainsi une œuvre artisanale qui correspond
-                à votre style et apporte une touche authentique et personnalisée
-                à votre intérieur.
-              </p>
-            </details>
-          </div>
-          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="200">
-            <div class="icon"><i class="bi bi-rocket-takeoff"></i></div>
-            <details>
-              <summary class="title">Stage sphère</summary>
-              <p class="description">L'objectif de ce stage est de vous faire découvrir l'argile, pas à pas, pour
-                obtenir votre propre pièce en céramique, un élément décoratif pour embellir votre intérieur ou votre
-                jardin. Le stage se déroule en 3 séances de 2 heures :</p>
-              <ol class="description">
-                <li>Créer sa sphère et discuter de sa future décoration.</li>
-                <li>Réaliser sa décoration.</li>
-                <li>Réaliser l'émaillage.</li>
-              </ol>
-              <p class="description">Vous choisirez la cuisson en fonction de votre projet : soit une cuisson au gaz
-                basse température de type "Raku", soit une cuisson électrique haute température. Le montant du stage
-                s'élève à 100 euros (terre et cuisson comprises).</p>
-            </details>
+          <div class="col-lg-12 icon-box" data-aos="fade-up">
+            <div class="icon"><i class="bi bi-gift"></i></div>
+            <h4 class="title">Offrir un bon cadeau</h4>
+            <p class="description">
+              Pour une initiation à la céramique ou un moment de découverte, nous
+              préparons un bon cadeau adapté à l'occasion et à la personne.
+            </p>
+            <p class="description mb-0">
+              <a href="#contact" class="btn btn-sm btn-warning">Offrir un bon cadeau</a>
+            </p>
           </div>
         </div>
       </div>
     </section>
-    <!-- End Services Section -->
+    <!-- End Bon Cadeau Section -->
+
+    <!-- ======= Commande Sur Mesure Section ======= -->
+    <section id="commande-sur-mesure" class="services services-cta section-bg">
+      <div class="container">
+        <div class="section-title">
+          <h2>Commande sur mesure</h2>
+          <p>
+            Vous avez une idée précise ? Construisons ensemble une pièce unique,
+            façonnée selon vos envies, vos usages et votre univers décoratif.
+          </p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-12 icon-box" data-aos="fade-up">
+            <div class="icon"><i class="bi bi-sliders2"></i></div>
+            <h4 class="title">Commander une pièce sur mesure</h4>
+            <p class="description">
+              Partagez votre besoin (forme, taille, usage, style) et nous vous
+              accompagnons pour donner vie à une création artisanale authentique.
+            </p>
+            <p class="description mb-0">
+              <a href="#contact" class="btn btn-sm btn-outline-dark">Demander une pièce</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Commande Sur Mesure Section -->
 
     <!-- ======= About Section ======= -->
     <section id="about" class="about">
@@ -984,8 +940,124 @@
     </section>
     <!-- End About Section -->
 
+    <!-- ======= Testimonials Section ======= -->
+    <section id="testimonials" class="testimonials section-bg">
+      <div class="container">
+        <div class="section-title">
+          <h2>Ce que nos clients disent de nous</h2>
+          <p>
+            Les coulisses de nos clients : leurs expériences uniques lors de nos <strong>ateliers de
+              poterie</strong> vous donneront l'envie irrésistible de vous lancer à votre tour. Et
+            parce que la passion se prolonge, découvrez aussi comment nos pièces façonnées
+            à la main ont séduit celles et ceux qui les ont adoptées 😍
+          </p>
+        </div>
+
+        <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="testimonial-item" data-aos="fade-up">
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  Depuis que j'ai découvert "Lo en terre", je suis fan
+                  inconditionnelle. Laurence travaille avec ses mains mais
+                  surtout avec son âme. Les pots ont une histoire... Je ne
+                  peux que conseiller vivement de découvrir Lo et ses
+                  poteries, Lo et les histoires de ses poteries.
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+                <img src="src/assets/img/testimonials/nathalie.jpg" class="testimonial-img" alt="Portrait de Nathalie"
+                  loading="lazy" />
+                <h3>Nathalie</h3>
+              </div>
+            </div>
+            <!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item" data-aos="fade-up" data-aos-delay="100">
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  Lo en terre est pour ma part une belle découverte. Son
+                  professionnalisme, sa disponibilité et son écoute pour
+                  réaliser les pièces qui me correspondent m'a agréablement
+                  surprise ! J'ai pu également découvrir un atelier poterie
+                  réalisée chez moi avec une dizaine d'enfants et tout était
+                  top, ils étaient heureux de mettre en œuvre leur créativité.
+                  Je la recommande +++
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+                <img src="src/assets/img/testimonials/adeline.jpg" class="testimonial-img" alt="Portrait d'Adeline"
+                  loading="lazy" />
+                <h3>Adeline</h3>
+              </div>
+            </div>
+            <!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item" data-aos="fade-up" data-aos-delay="200">
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  Je suis tombée sous le charme du travail de Laurence. Toutes
+                  ses pièces racontent une histoire et ont une identité
+                  propre. C'est un réel plaisir d'apprécier son travail
+                  d'artisan au quotidien à travers les pièces qui décorent
+                  merveilleusement mon interieur ou celui de mes proches.
+                  Laurence s'applique à mettre en oeuvre mes souhaits sans
+                  manquer de conseils judicieux. Lo en terre c est avant tout
+                  l'expression de son âme d'artiste.
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+                <img src="src/assets/img/testimonials/mary.png" class="testimonial-img" alt="Portrait de Mary"
+                  loading="lazy" />
+                <h3>Mary</h3>
+              </div>
+            </div>
+            <!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item" data-aos="fade-up" data-aos-delay="300">
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  Merci beaucoup, Laurence pour cette matinée plus que
+                  bénéfique. J'avais arrêté de tourner depuis un moment et tu
+                  m'as donné l'envie de recommencer. J'ai aimé ton
+                  enthousiasme, ta simplicité et surtout ta façon d'apprendre.
+                  Grâce à cette matinée à tes côtés, je fais maintenant partie
+                  d'un atelier de poterie!
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+                <img src="src/assets/img/testimonials/emilie.png" class="testimonial-img" alt="Portrait d'Emilie"
+                  loading="lazy" />
+                <h3>Emilie</h3>
+              </div>
+            </div>
+            <!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item" data-aos="fade-up" data-aos-delay="400">
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  Un moment exceptionnel. Laurence nous explique, nous conseille,
+                  nous apprend à travailler la terre avec enthousiasme et de manière
+                  didactique. Un vrai plaisir. Et tout cela dans une ambiance
+                  sympathique et chaleureuse. Merci à toi Laurence !
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+                <img src="src/assets/img/testimonials/laurent.jpg" class="testimonial-img" alt="Portrait de Laurent"
+                  loading="lazy" />
+                <h3>Laurent</h3>
+              </div>
+            </div>
+            <!-- End testimonial item -->
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </section>
+    <!-- End Testimonials Section -->
+
     <!-- ======= Speciality Section ======= -->
-    <section id="speciality" class="speciality section-bg">
+    <section id="speciality" class="speciality">
       <div class="container">
         <div class="section-title">
           <h2>Le travail de la terre</h2>
@@ -1194,7 +1266,7 @@
     <!-- End Speciality Section -->
 
     <!-- ======= News Section ======= -->
-    <section id="news" class="news">
+    <section id="news" class="news section-bg">
       <div class="container">
         <div class="section-title">
           <h2>Actualités</h2>
@@ -1215,7 +1287,7 @@
     <!-- End News Section -->
 
     <!-- ======= Contact Section ======= -->
-    <section id="contact" class="contact section-bg">
+    <section id="contact" class="contact">
       <div class="container">
         <div class="section-title">
           <h2>Contactez Lo en terre</h2>
@@ -1318,7 +1390,7 @@
       class="bi bi-arrow-up-short"></i></a>
 
   <!-- Sticky Register Button -->
-  <a href="#contact" class="sticky-register-btn">
+  <a href="reserver/" class="sticky-register-btn">
     <i class="bi bi-calendar-check"></i>
     <span>Réserver un atelier</span>
   </a>
@@ -1330,6 +1402,17 @@
   <script src="src/assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="src/assets/vendor/typed.js/typed.umd.js"></script>
   <script src="src/assets/vendor/php-email-form/validate.js"></script>
+
+  <script>
+    (function () {
+      const devHosts = new Set(["dev.loenterre.com"]);
+      if (!devHosts.has(window.location.hostname)) return;
+      const banner = document.getElementById("dev-warning");
+      if (!banner) return;
+      banner.hidden = false;
+      document.body.classList.add("dev-warning-active");
+    })();
+  </script>
 
   <!-- Template Main JS File -->
   <script src="src/assets/js/main.js"></script>

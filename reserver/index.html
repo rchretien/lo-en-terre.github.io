@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="fr-BE">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Réserver un atelier | Lo en terre</title>
+  <meta name="description"
+    content="Réservez votre atelier de poterie chez Lo en terre à Liège. Indiquez vos disponibilités et nous vous recontactons rapidement." />
+  <link rel="canonical" href="https://loenterre.com/reserver/" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" />
+
+  <link href="../src/assets/img/logo.png" rel="icon" />
+  <link href="../src/assets/img/logo.png" rel="apple-touch-icon" />
+
+  <link rel="stylesheet" href="../src/assets/vendor/bootstrap/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="../src/assets/vendor/bootstrap-icons/bootstrap-icons.css" />
+  <link rel="stylesheet" href="../src/assets/css/style.css" />
+
+  <style>
+    :root {
+      --dev-banner-height: 56px;
+    }
+
+    body {
+      background: #f7f3ef;
+    }
+
+    .dev-warning-banner {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 999;
+      background: #b71c1c;
+      color: #fff;
+      text-align: center;
+      padding: 10px 16px;
+      font-weight: 700;
+      font-size: 0.92rem;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      box-shadow: 0 12px 20px rgba(0, 0, 0, 0.18);
+    }
+
+    .dev-warning-banner span {
+      display: block;
+      font-weight: 600;
+      font-size: 0.78rem;
+      letter-spacing: 0.3px;
+      text-transform: none;
+    }
+
+    body.dev-warning-active {
+      padding-top: var(--dev-banner-height);
+    }
+
+    body.dev-warning-active .register-header {
+      top: var(--dev-banner-height);
+    }
+
+    .register-header {
+      background: #fff;
+      border-bottom: 1px solid #f0e6db;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .register-header .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 16px 0;
+    }
+
+    .register-brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      color: #6c3b17;
+      font-weight: 700;
+      text-decoration: none;
+      font-size: 1.1rem;
+    }
+
+    .register-brand img {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid #f3dcc2;
+    }
+
+    .register-hero {
+      background: linear-gradient(115deg, rgba(108, 59, 23, 0.9), rgba(240, 147, 0, 0.82)),
+        url("../src/assets/img/lo_cer2.jpg") center / cover no-repeat;
+      color: #fff;
+      padding: 80px 0 90px;
+    }
+
+    .register-hero .hero-card {
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 18px;
+      padding: 32px;
+      max-width: 640px;
+      box-shadow: 0 24px 50px rgba(0, 0, 0, 0.18);
+    }
+
+    .register-hero h1 {
+      color: #fff;
+      font-size: clamp(2.4rem, 4vw, 3.4rem);
+      margin-bottom: 12px;
+    }
+
+    .register-hero p {
+      color: rgba(255, 255, 255, 0.92);
+      font-size: 1.1rem;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .hero-meta .meta-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(0, 0, 0, 0.3);
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+
+    .register-steps {
+      padding: 70px 0 40px;
+    }
+
+    .register-categories {
+      padding: 60px 0 10px;
+    }
+
+    .category-card {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      background: #fff;
+      border-radius: 18px;
+      padding: 24px;
+      border: 1px solid #f0e6db;
+      box-shadow: 0 18px 38px rgba(108, 59, 23, 0.08);
+      text-decoration: none;
+      color: #4a2a12;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    }
+
+    .category-card:focus-visible,
+    .category-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 26px 48px rgba(108, 59, 23, 0.14);
+      border-color: #dd8014;
+      color: #4a2a12;
+    }
+
+    .category-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      align-self: flex-start;
+      font-size: 0.75rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 999px;
+    }
+
+    .category-card--calendar .category-tag {
+      background: #dd8014;
+      color: #fff;
+    }
+
+    .category-card--message .category-tag {
+      background: #f7e8d4;
+      color: #6c3b17;
+    }
+
+    .category-title {
+      font-size: 1.25rem;
+      margin: 14px 0 8px;
+      color: #6c3b17;
+    }
+
+    .category-desc {
+      margin-bottom: 16px;
+      color: #6b5a4b;
+    }
+
+    .category-cta {
+      margin-top: auto;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 600;
+      color: #6c3b17;
+    }
+
+    .step-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 24px;
+      border: 1px solid #f0e6db;
+      box-shadow: 0 18px 40px rgba(108, 59, 23, 0.08);
+      height: 100%;
+    }
+
+    .step-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      background: #dd8014;
+      color: #fff;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+    }
+
+    .step-card h3 {
+      margin-top: 14px;
+      font-size: 1.2rem;
+      color: #6c3b17;
+    }
+
+    .register-note {
+      background: #fff8f0;
+      border: 1px solid #f2d7b8;
+      border-radius: 16px;
+      padding: 20px 24px;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      color: #6c3b17;
+    }
+
+    .register-note i {
+      font-size: 1.4rem;
+      color: #dd8014;
+      margin-top: 2px;
+    }
+
+    @media (max-width: 991px) {
+      :root {
+        --dev-banner-height: 64px;
+      }
+
+      .register-header .container {
+        padding: 14px 12px;
+      }
+
+      .register-hero {
+        padding: 70px 0 80px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="dev-warning" class="dev-warning-banner" role="alert" hidden>
+    Version de test — ne pas utiliser pour des réservations réelles
+    <span>Cette page est uniquement destinée aux essais.</span>
+  </div>
+  <header class="register-header">
+    <div class="container">
+      <a class="register-brand" href="../">
+        <img src="../src/assets/img/logo.png" alt="Logo de Lo en terre" loading="lazy" />
+        <span>Lo en terre</span>
+      </a>
+      <a href="../" class="btn btn-outline-dark btn-sm">
+        <i class="bi bi-arrow-left me-2"></i>Retour à l'accueil
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <section class="register-hero">
+      <div class="container">
+        <div class="hero-card">
+          <span class="hero-kicker">Réservation</span>
+          <h1>Réserver un atelier de poterie</h1>
+          <p>
+            Dites-nous ce que vous souhaitez découvrir, vos disponibilités et le nombre de participants.
+            Nous vous recontactons pour confirmer le créneau idéal.
+          </p>
+          <div class="hero-meta">
+            <div class="meta-item"><i class="bi bi-clock"></i>Ateliers de 3 heures</div>
+            <div class="meta-item"><i class="bi bi-people"></i>Petits groupes conviviaux</div>
+            <div class="meta-item"><i class="bi bi-geo-alt"></i>Liège, atelier 96</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="register-categories">
+      <div class="container">
+        <div class="section-title">
+          <h2>Choisissez votre atelier</h2>
+          <p>Trois formats se réservent directement en ligne, les autres se font sur demande.</p>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-4">
+            <a class="category-card category-card--calendar"
+              href="https://cal.com/laurence-greday/initiation-a-la-ceramique"
+              data-cal-link="laurence-greday/initiation-a-la-ceramique" data-cal-namespace="initiation-a-la-ceramique"
+              data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'>
+              <span class="category-tag"><i class="bi bi-calendar-event"></i>Calendrier</span>
+              <h3 class="category-title">Atelier d'initiation</h3>
+              <p class="category-desc">Une première immersion pour découvrir la terre et le tournage.</p>
+              <span class="category-cta">Choisir une date <i class="bi bi-arrow-up-right"></i></span>
+            </a>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <a class="category-card category-card--calendar" href="#reservation-form" data-atelier="Atelier bimensuel">
+              <span class="category-tag"><i class="bi bi-calendar-event"></i>Calendrier</span>
+              <h3 class="category-title">Atelier bimensuel (en dev)</h3>
+              <p class="category-desc">Un rendez-vous régulier pour progresser pas à pas.</p>
+              <span class="category-cta">Choisir une date <i class="bi bi-arrow-up-right"></i></span>
+            </a>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <a class="category-card category-card--calendar" href="#reservation-form"
+              data-atelier="Atelier hebdomadaire">
+              <span class="category-tag"><i class="bi bi-calendar-event"></i>Calendrier</span>
+              <h3 class="category-title">Atelier hebdomadaire (en dev)</h3>
+              <p class="category-desc">Un suivi continu pour approfondir votre pratique.</p>
+              <span class="category-cta">Choisir une date <i class="bi bi-arrow-up-right"></i></span>
+            </a>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <a class="category-card category-card--message" href="#reservation-form" data-atelier="Atelier enfant">
+              <span class="category-tag"><i class="bi bi-chat-left-text"></i>Message</span>
+              <h3 class="category-title">Atelier enfant</h3>
+              <p class="category-desc">Une session adaptée aux plus jeunes et aux familles.</p>
+              <span class="category-cta">Envoyer un message <i class="bi bi-arrow-right"></i></span>
+            </a>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <a class="category-card category-card--message" href="#reservation-form" data-atelier="Stage">
+              <span class="category-tag"><i class="bi bi-chat-left-text"></i>Message</span>
+              <h3 class="category-title">Stage</h3>
+              <p class="category-desc">Des sessions plus longues pour explorer en profondeur.</p>
+              <span class="category-cta">Envoyer un message <i class="bi bi-arrow-right"></i></span>
+            </a>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <a class="category-card category-card--message" href="#reservation-form" data-atelier="Cours privé">
+              <span class="category-tag"><i class="bi bi-chat-left-text"></i>Message</span>
+              <h3 class="category-title">Cours privé</h3>
+              <p class="category-desc">Un accompagnement personnalisé sur mesure.</p>
+              <span class="category-cta">Envoyer un message <i class="bi bi-arrow-right"></i></span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="register-steps">
+      <div class="container">
+        <div class="section-title">
+          <h2>Comment ça se passe</h2>
+          <p>Un parcours simple pour réserver votre atelier.</p>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="step-card">
+              <div class="step-icon"><i class="bi bi-calendar-event"></i></div>
+              <h3>1. Sélectionnez votre atelier</h3>
+              <p>Choisissez le type d'atelier et la date qui vous convient.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="step-card">
+              <div class="step-icon"><i class="bi bi-calendar-check"></i></div>
+              <h3>2. Nous confirmons le créneau</h3>
+              <p>Nous revenons vers vous rapidement pour valider la date et les modalités.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="step-card">
+              <div class="step-icon"><i class="bi bi-cup-hot"></i></div>
+              <h3>3. Place à la céramique</h3>
+              <p>Rendez-vous à l'atelier pour un moment de partage, de terre et de feu.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="reservation-form" class="contact">
+      <div class="container">
+        <div class="section-title">
+          <h2>Formulaire de réservation</h2>
+          <p>
+            Remplissez les informations ci-dessous et nous vous recontacterons sous 48h.
+          </p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-5 d-flex align-items-stretch">
+            <div class="info">
+              <div class="address">
+                <i class="bi bi-geo-alt"></i>
+                <h4>Adresse :</h4>
+                <p>96, rue Bontemps, 4000 Liège, Belgique</p>
+              </div>
+
+              <div class="email">
+                <i class="bi bi-envelope"></i>
+                <h4>Email :</h4>
+                <p>
+                  <a href="mailto:laurence.greday@gmail.com">laurence.greday@gmail.com</a>
+                </p>
+              </div>
+
+              <div class="phone">
+                <i class="bi bi-phone"></i>
+                <h4>Téléphone :</h4>
+                <p>+32 497 108540</p>
+              </div>
+
+              <div class="address">
+                <i class="bi bi-clock"></i>
+                <h4>Disponibilités :</h4>
+                <p>Du mardi au samedi, sur rendez-vous.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
+            <form action="https://formspree.io/f/mpzvnzag" method="post" role="form" class="php-email-form">
+              <input type="hidden" name="_next" value="/thanks" />
+              <input type="hidden" name="subject" value="Demande de réservation d'atelier" />
+
+              <div class="row">
+                <div class="form-group col-md-6">
+                  <label for="name">Votre nom</label>
+                  <input type="text" name="name" class="form-control" id="name" autocomplete="name" required />
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="email">Votre adresse email</label>
+                  <input type="email" class="form-control" name="email" id="email" autocomplete="email" required />
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="form-group col-md-6">
+                  <label for="phone">Téléphone</label>
+                  <input type="tel" class="form-control" name="phone" id="phone" autocomplete="tel" />
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="participants">Participants</label>
+                  <input type="number" class="form-control" name="participants" id="participants" min="1" max="8"
+                    required />
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="form-group col-md-6">
+                  <label for="atelier">Atelier souhaité</label>
+                  <select class="form-control" name="atelier" id="atelier" required>
+                    <option value="" disabled selected>Choisir un atelier</option>
+                    <option>Atelier d'initiation</option>
+                    <option>Atelier bimensuel</option>
+                    <option>Atelier hebdomadaire</option>
+                    <option>Atelier enfant</option>
+                    <option>Stage</option>
+                    <option>Cours privé</option>
+                  </select>
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="date">Date ou créneau préféré</label>
+                  <input type="text" class="form-control" name="date_preferre" id="date"
+                    placeholder="Ex : Samedi 12/10 après-midi" required />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="message">Votre message</label>
+                <textarea class="form-control" name="message" id="message" rows="6"
+                  placeholder="Indiquez vos disponibilités, le niveau du groupe et toute info utile."
+                  required></textarea>
+              </div>
+
+              <div class="my-3">
+                <div class="loading">Loading</div>
+                <div class="error-message"></div>
+                <div class="sent-message">
+                  Votre demande a bien été envoyée. Merci !
+                </div>
+              </div>
+              <div class="text-center">
+                <button type="submit">Envoyer la demande <i class="bi bi-send"></i></button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="../src/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../src/assets/vendor/php-email-form/validate.js"></script>
+  <script>
+    (function () {
+      const devHosts = new Set(["dev.loenterre.com"]);
+      if (!devHosts.has(window.location.hostname)) return;
+      const banner = document.getElementById("dev-warning");
+      if (!banner) return;
+      banner.hidden = false;
+      document.body.classList.add("dev-warning-active");
+    })();
+
+    (function () {
+      const atelierSelect = document.getElementById("atelier");
+      if (!atelierSelect) return;
+
+      document.querySelectorAll("[data-atelier]").forEach((link) => {
+        link.addEventListener("click", () => {
+          const value = link.getAttribute("data-atelier");
+          if (value) {
+            atelierSelect.value = value;
+          }
+        });
+      });
+    })();
+  </script>
+  <script type="text/javascript">
+    (function (C, A, L) {
+      let p = function (a, ar) { a.q.push(ar); };
+      let d = C.document;
+      C.Cal = C.Cal || function () {
+        let cal = C.Cal;
+        let ar = arguments;
+        if (!cal.loaded) {
+          cal.ns = {};
+          cal.q = cal.q || [];
+          d.head.appendChild(d.createElement("script")).src = A;
+          cal.loaded = true;
+        }
+        if (ar[0] === L) {
+          const api = function () { p(api, arguments); };
+          const namespace = ar[1];
+          api.q = api.q || [];
+          if (typeof namespace === "string") {
+            cal.ns[namespace] = cal.ns[namespace] || api;
+            p(cal.ns[namespace], ar);
+            p(cal, ["initNamespace", namespace]);
+          } else p(cal, ar);
+          return;
+        }
+        p(cal, ar);
+      };
+    })(window, "https://app.cal.com/embed/embed.js", "init");
+    Cal("init", "initiation-a-la-ceramique", { origin: "https://app.cal.com" });
+    Cal.ns["initiation-a-la-ceramique"]("ui", { "hideEventTypeDetails": false, "layout": "month_view" });
+  </script>
+</body>
+
+</html>
