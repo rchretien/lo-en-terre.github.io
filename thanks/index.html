@@ -42,6 +42,13 @@
       margin-bottom: 2rem;
       line-height: 1.6;
     }
+
+    .thank-you-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+    }
   </style>
 </head>
 
@@ -52,9 +59,17 @@
       Nous avons bien reçu votre message et vous recontacterons dès que possible.
       En attendant, n'hésitez pas à poursuivre votre visite de Lo en terre.
     </p>
-    <a href="../" class="btn btn-warning">
-      <i class="bi bi-arrow-left me-2"></i>Retourner sur la page d'accueil
-    </a>
+    <div class="thank-you-actions">
+      <a href="../" class="btn btn-warning">
+        <i class="bi bi-arrow-left me-2"></i>Accueil
+      </a>
+      <a href="../reserver/" class="btn btn-outline-dark">
+        <i class="bi bi-calendar-check me-2"></i>Réserver
+      </a>
+      <a href="../bon-cadeau/" class="btn btn-outline-dark">
+        <i class="bi bi-gift me-2"></i>Bon cadeau
+      </a>
+    </div>
   </main>
 
   <script src="../src/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
