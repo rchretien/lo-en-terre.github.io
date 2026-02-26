@@ -346,7 +346,7 @@ summary::after {
   transition: transform 0.25s ease;
 }
 
-details[open] > summary::after {
+details[open]>summary::after {
   transform: rotate(180deg);
 }
 
@@ -405,7 +405,7 @@ details[open] > summary::after {
   display: block;
 }
 
-#faq .icon-box > details {
+#faq .icon-box>details {
   width: 100%;
 }
 
@@ -464,7 +464,7 @@ details[open] > summary::after {
   line-height: 1.6;
 }
 
-.timeline-content p + p {
+.timeline-content p+p {
   margin-top: 6px;
 }
 
@@ -528,7 +528,7 @@ details[open] > summary::after {
   padding: 26px;
 }
 
-.speciality-item + .speciality-item {
+.speciality-item+.speciality-item {
   margin-top: 24px;
 }
 
