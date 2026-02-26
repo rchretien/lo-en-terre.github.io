@@ -7,7 +7,7 @@ Static showcase site for the “Lo en terre” workshop: activities overview, wo
 - Pre‑production domain: `dev.loenterre.com` (enables a visual warning banner)
 
 ## Key Features
-- Pure HTML/CSS/JS, based on Bootstrap 5 (adapted iPortfolio template).
+- Pure HTML/CSS/JS, with a custom front-end built on Bootstrap 5 utilities/components.
 - SEO ready: meta tags, Open Graph, Twitter Card, JSON‑LD `LocalBusiness`.
 - UI: AOS animations, Swiper carousels, Bootstrap/Boxicons icons.
 - Bookings: forms via Formspree (no custom backend).
@@ -19,8 +19,8 @@ Static showcase site for the “Lo en terre” workshop: activities overview, wo
 - `reservation-received/` — confirmation page with ICS generation and Google Calendar link.
 - `thanks/` — thank‑you page (generic contact form).
 - `src/assets/css/style.css` — main styles.
-- `src/assets/js/main.js` — general template behavior.
-- `src/assets/vendor/*` — vendored front‑end deps (Bootstrap, AOS, Swiper, etc.).
+- `src/assets/js/main.js` — custom interaction scripts.
+- `src/assets/vendor/*` — vendored front-end dependencies.
 - `.github/workflows/` — CI/CD (Cloudflare Pages deployment, PR guard).
 
 ## Quick Start (local)
@@ -64,9 +64,8 @@ npm start
 The `.devcontainer/` folder lets you open the project in a VS Code/Codespaces container with Node and tools preinstalled (example configuration from an Azure Static Web Apps starter).
 
 ## Credits & License
-- Base template: iPortfolio by BootstrapMade (see notices in `index.html`).
-- Third‑party dependencies under their respective licenses.
-- Content, visuals, and texts © Lo en terre. All rights reserved.
+- Third-party dependencies remain under their respective licenses.
+- Content, visuals, and texts belong to Lo en terre.
 
 ---
 Suggestions, fixes, or requests? Open an issue or PR on this repository.
