@@ -80,12 +80,8 @@
       padding-top: var(--dev-banner-height);
     }
 
-    body.dev-warning-active #header {
+    body.dev-warning-active .site-header {
       top: var(--dev-banner-height);
-    }
-
-    body.dev-warning-active .mobile-nav-toggle {
-      top: calc(15px + var(--dev-banner-height));
     }
 
     @media (max-width: 991px) {
@@ -135,15 +131,6 @@
     "description": "Atelier de poterie et de céramique à Liège - tournage, modelage, raku et création artisanale."
   }
   </script>
-
-  <!-- Template Attribution -->
-  <!-- =======================================================
-  * Template Name: iPortfolio
-  * Updated: Nov 17 2023 with Bootstrap v5.3.2
-  * Template URL: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
 </head>
 
 <body>
@@ -151,66 +138,36 @@
     Version de test — ne pas utiliser pour des réservations réelles
     <span>Cette page est uniquement destinée aux essais.</span>
   </div>
-  <!-- ======= Mobile nav toggle button ======= -->
-  <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
+  <header class="site-header" id="site-header">
+    <div class="container site-header-inner">
+      <a href="#hero" class="site-brand scrollto" aria-label="Retour en haut de la page Lo en terre">
+        <img src="src/assets/img/logo.png" alt="Logo de Lo en terre" loading="lazy" />
+        <span>Lo en terre</span>
+      </a>
 
-  <!-- ======= Header ======= -->
-  <header id="header">
-    <div class="d-flex flex-column">
-      <div class="profile">
-        <img src="src/assets/img/logo.png" alt="Logo de Lo en terre" class="img-fluid rounded-circle" loading="lazy" />
-        <h1 class="text-light"><a href="index.html">Lo en terre</a></h1>
-        <div class="social-links mt-3 text-center">
-          <a href="https://www.facebook.com/lgreday/" target="_blank" class="facebook"><i
-              class="bx bxl-facebook"></i></a>
-          <a href="https://www.instagram.com/ceramiqueloenterre/" target="_blank" class="instagram"><i
-              class="bx bxl-instagram"></i></a>
-        </div>
-      </div>
+      <button class="site-nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav"
+        aria-label="Ouvrir le menu de navigation">
+        <i class="bi bi-list"></i>
+      </button>
 
-      <nav id="navbar" class="nav-menu navbar">
+      <nav id="site-nav" class="site-nav" aria-label="Navigation principale">
         <ul>
-          <li>
-            <a href="#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Accueil</span></a>
-          </li>
-          <li>
-            <a href="#workshop" class="nav-link scrollto"><i class="bi bi-tools"></i> <span>Nos ateliers</span></a>
-          </li>
-          <li>
-            <a href="#atelier96" class="nav-link scrollto"><i class="bi bi-house-door-fill"></i> <span>Découvrir
-                l'atelier 96</span></a>
-          </li>
-          <li>
-            <a href="#faq" class="nav-link scrollto"><i class="bi bi-question-circle"></i> <span>FAQ</span></a>
-          </li>
-          <li>
-            <a href="#bon-cadeau" class="nav-link scrollto"><i class="bi bi-gift"></i> <span>Bon cadeau</span></a>
-          </li>
-          <li>
-            <a href="#commande-sur-mesure" class="nav-link scrollto"><i class="bi bi-sliders2"></i>
-              <span>Commande sur mesure</span></a>
-          </li>
-          <li>
-            <a href="#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>A propos</span></a>
-          </li>
-          <li>
-            <a href="#speciality" class="nav-link scrollto"><i class="bi bi-cup-fill"></i>
-              <span>Travail de la terre</span></a>
-          </li>
-          <li>
-            <a href="#news" class="nav-link scrollto"><i class="bi bi-calendar-check"></i> <span>Actualités</span></a>
-          </li>
-          <li>
-            <a href="#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a>
-          </li>
+          <li><a href="#hero" class="scrollto active">Accueil</a></li>
+          <li><a href="#workshop" class="scrollto">Nos ateliers</a></li>
+          <li><a href="#atelier96" class="scrollto">Atelier 96</a></li>
+          <li><a href="#faq" class="scrollto">FAQ</a></li>
+          <li><a href="#bon-cadeau" class="scrollto">Bon cadeau</a></li>
+          <li><a href="#commande-sur-mesure" class="scrollto">Sur mesure</a></li>
+          <li><a href="#about" class="scrollto">A propos</a></li>
+          <li><a href="#speciality" class="scrollto">Travail de la terre</a></li>
+          <li><a href="#news" class="scrollto">Actualites</a></li>
+          <li><a href="#contact" class="scrollto">Contact</a></li>
         </ul>
+        <a href="reserver/" class="site-nav-cta">Reserver</a>
       </nav>
-      <!-- .nav-menu -->
     </div>
   </header>
-  <!-- End Header -->
 
-  <!-- ======= Hero Section ======= -->
   <section id="hero" class="hero">
     <div class="hero-container" data-aos="fade-in">
       <span class="hero-kicker">Atelier de poterie à Liège</span>
@@ -240,91 +197,99 @@
           </p>
         </div>
 
-        <div class="row">
-          <div class="col-lg-6 col-md-6 icon-box" data-aos="fade-up">
-            <div class="icon"><i class="bi bi-mortarboard"></i></div>
-            <details>
-              <summary class="title">Atelier d'initiation à la céramique</summary>
-              <p class="description">
-                Explorez le monde captivant de la céramique à travers nos ateliers
-                d'initiation. Plongez dans l'art millénaire de la céramique tout
-                en découvrant les bases de la manipulation de l'argile, du tournage
-                pour donner vie à vos idées les plus créatives. L'initiation a pour
-                but de vous faire découvrir l'argile, de percevoir si son contact
-                vous plaît et si vous aurez envie de poursuivre l'aventure plus
-                régulièrement lors de nos ateliers. La pratique du tour sera
-                au centre de cet apprentissage. N'espérez pas repartir avec un
-                objet après 3 heures de travail car la céramique est un long
-                processus 😊 <br>
-                <strong>Prix :</strong> 40€ pour 3 heures en groupe de 4 personnes, ou 150€ pour 3 heures en individuel.
-              </p>
-            </details>
+        <div class="row g-4">
+          <div class="col-lg-6 col-md-6" data-aos="fade-up">
+            <div class="icon-box h-100">
+              <div class="icon"><i class="bi bi-mortarboard"></i></div>
+              <details>
+                <summary class="title">Atelier d'initiation à la céramique</summary>
+                <p class="description">
+                  Explorez le monde captivant de la céramique à travers nos ateliers
+                  d'initiation. Plongez dans l'art millénaire de la céramique tout
+                  en découvrant les bases de la manipulation de l'argile, du tournage
+                  pour donner vie à vos idées les plus créatives. L'initiation a pour
+                  but de vous faire découvrir l'argile, de percevoir si son contact
+                  vous plaît et si vous aurez envie de poursuivre l'aventure plus
+                  régulièrement lors de nos ateliers. La pratique du tour sera
+                  au centre de cet apprentissage. N'espérez pas repartir avec un
+                  objet après 3 heures de travail car la céramique est un long
+                  processus 😊 <br>
+                  <strong>Prix :</strong> 40€ pour 3 heures en groupe de 4 personnes, ou 150€ pour 3 heures en individuel.
+                </p>
+              </details>
+            </div>
           </div>
-          <div class="col-lg-6 col-md-6 icon-box" data-aos="fade-up">
-            <div class="icon"><i class="bi bi-calendar-event"></i></div>
-            <details>
-              <summary class="title">Ateliers hebdomadaires et bimensuels</summary>
-              <p class="description">
-                Ateliers de travail de la terre en groupe pour créer et développer ses projets
-                céramiques, expérimenter différentes techniques : modelage, estampage, plaque,
-                colombin, pincé, tour (le coulage n'est pas disponible, mais la sculpture est
-                possible sous conditions), et découvrir la vie d'un atelier en participant à
-                toutes les étapes nécessaires. Deux formules sont possibles : 4 séances de 3
-                heures par mois pour une pratique soutenue, ou 2 séances de 3 heures par mois
-                pour une approche plus flexible et un rythme personnalisé. <br>
-                <strong>Prix :</strong> 115€/mois pour 4 séances (hors cuisson). <br>
-                <strong>Prix :</strong> 70€/mois pour 2 séances (hors cuisson).
-              </p>
-            </details>
+          <div class="col-lg-6 col-md-6" data-aos="fade-up">
+            <div class="icon-box h-100">
+              <div class="icon"><i class="bi bi-calendar-event"></i></div>
+              <details>
+                <summary class="title">Ateliers hebdomadaires et bimensuels</summary>
+                <p class="description">
+                  Ateliers de travail de la terre en groupe pour créer et développer ses projets
+                  céramiques, expérimenter différentes techniques : modelage, estampage, plaque,
+                  colombin, pincé, tour (le coulage n'est pas disponible, mais la sculpture est
+                  possible sous conditions), et découvrir la vie d'un atelier en participant à
+                  toutes les étapes nécessaires. Deux formules sont possibles : 4 séances de 3
+                  heures par mois pour une pratique soutenue, ou 2 séances de 3 heures par mois
+                  pour une approche plus flexible et un rythme personnalisé. <br>
+                  <strong>Prix :</strong> 115€/mois pour 4 séances (hors cuisson). <br>
+                  <strong>Prix :</strong> 70€/mois pour 2 séances (hors cuisson).
+                </p>
+              </details>
+            </div>
           </div>
-          <div class="col-lg-6 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
-            <div class="icon"><i class="bi bi-palette"></i></div>
-            <details>
-              <summary class="title">Stages</summary>
-              <p class="description">
-                Des stages ponctuels pour s'initier, progresser et prendre le temps de créer,
-                avec un accompagnement pas à pas dans une ambiance conviviale. Deux types de
-                stage sont proposés :
-              </p>
-              <ul class="description">
-                <li>
-                  Stage découverte :
-                  <ul class="sublist">
-                    <li>Réalisation d'une sphère.</li>
-                    <li>Réalisation d'un ensemble petit-déjeuner.</li>
-                    <li>Réalisation d'un ensemble apéritif.</li>
-                  </ul>
-                  <p><strong>Prix du stage découverte :</strong> 100€ à 115€ (selon la taille de la sphère) pour 3 × 2
-                    heures, cuisson comprise.</p>
-                </li>
-                <li>
-                  Stage de tournage - niveau débutant.
-                  <ul class="sublist">
-                    <li>appréhender le tournage : 2 × 5h30</li>
-                    <li>appréhender le tournassage : 2 × 5h30</li>
-                    <li>appréhender l'émaillage : 1 × 3h</li>
-                  </ul>
-                  <p><strong>Prix du stage de tournage :</strong> 300€ (hors cuisson)</p>
-                </li>
-              </ul>
-            </details>
+          <div class="col-lg-6 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="icon-box h-100">
+              <div class="icon"><i class="bi bi-palette"></i></div>
+              <details>
+                <summary class="title">Stages</summary>
+                <p class="description">
+                  Des stages ponctuels pour s'initier, progresser et prendre le temps de créer,
+                  avec un accompagnement pas à pas dans une ambiance conviviale. Deux types de
+                  stage sont proposés :
+                </p>
+                <ul class="description">
+                  <li>
+                    Stage découverte :
+                    <ul class="sublist">
+                      <li>Réalisation d'une sphère.</li>
+                      <li>Réalisation d'un ensemble petit-déjeuner.</li>
+                      <li>Réalisation d'un ensemble apéritif.</li>
+                    </ul>
+                    <p><strong>Prix du stage découverte :</strong> 100€ à 115€ (selon la taille de la sphère) pour 3 × 2
+                      heures, cuisson comprise.</p>
+                  </li>
+                  <li>
+                    Stage de tournage - niveau débutant.
+                    <ul class="sublist">
+                      <li>appréhender le tournage : 2 × 5h30</li>
+                      <li>appréhender le tournassage : 2 × 5h30</li>
+                      <li>appréhender l'émaillage : 1 × 3h</li>
+                    </ul>
+                    <p><strong>Prix du stage de tournage :</strong> 300€ (hors cuisson)</p>
+                  </li>
+                </ul>
+              </details>
+            </div>
           </div>
-          <div class="col-lg-6 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
-            <div class="icon"><i class="bi bi-calendar2-week"></i></div>
-            <details>
-              <summary class="title">Ateliers personnalisés</summary>
-              <p class="description">
-                Des formats sur mesure pour partager un moment créatif, s'initier ou approfondir une technique, en
-                petit groupe et à votre rythme.
-              </p>
-              <ul class="description">
-                <li><strong>Ateliers enfants :</strong> 30€ pour 2h30, 3 enfants minimum (cuisson non comprise, mais un
-                  forfait est proposé).</li>
-                <li><strong>Ateliers parents-enfants :</strong> 30€ pour 2h30, 3 personnes minimum (hors cuisson).</li>
-                <li><strong>Groupes privés :</strong> 150€ (hors cuisson) pour 4 personnes ou 220€ (hors cuisson) pour 6
-                  personnes afin de privatiser l'atelier pour 3 heures.</li>
-              </ul>
-            </details>
+          <div class="col-lg-6 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="icon-box h-100">
+              <div class="icon"><i class="bi bi-calendar2-week"></i></div>
+              <details>
+                <summary class="title">Ateliers personnalisés</summary>
+                <p class="description">
+                  Des formats sur mesure pour partager un moment créatif, s'initier ou approfondir une technique, en
+                  petit groupe et à votre rythme.
+                </p>
+                <ul class="description">
+                  <li><strong>Ateliers enfants :</strong> 30€ pour 2h30, 3 enfants minimum (cuisson non comprise, mais un
+                    forfait est proposé).</li>
+                  <li><strong>Ateliers parents-enfants :</strong> 30€ pour 2h30, 3 personnes minimum (hors cuisson).</li>
+                  <li><strong>Groupes privés :</strong> 150€ (hors cuisson) pour 4 personnes ou 220€ (hors cuisson) pour 6
+                    personnes afin de privatiser l'atelier pour 3 heures.</li>
+                </ul>
+              </details>
+            </div>
           </div>
         </div>
       </div>
@@ -445,7 +410,7 @@
         </div>
 
         <!-- Equipment Description -->
-        <div class="atelier96-equipment mt-4">
+        <div class="atelier96-equipment mb-4">
           <p>
             Concernant l'équipement de l'atelier, nous disposons de :
           </p>
@@ -580,91 +545,108 @@
           </p>
         </div>
 
-        <div class="row">
-          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
-            <details>
+        <div class="row g-4 mb-4">
+          <div class="col-lg-4 col-md-6" data-aos="fade-up">
+            <div class="icon-box h-100">
+              <details>
               <summary class="title"><strong>🧠 Faut-il avoir de l'expérience pour participer à un atelier ?</strong>
               </summary>
               <p class="description">
                 → Non, les ateliers sont ouverts à tous les niveaux, débutants comme passionnés.
                 L'essentiel est d'avoir envie de découvrir !
               </p>
-            </details>
+              </details>
+            </div>
           </div>
-          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
-            <details>
+          <div class="col-lg-4 col-md-6" data-aos="fade-up">
+            <div class="icon-box h-100">
+              <details>
               <summary class="title"><strong>🎒 Que faut-il apporter pour un atelier ?</strong></summary>
               <p class="description">
                 → Juste une tenue confortable qui peut être salie (y compris vos chaussures),
                 pensez à attacher vos cheveux et à avoir les ongles courts,
                 sans oublier votre bonne humeur ! Le matériel est fourni.
               </p>
-            </details>
+              </details>
+            </div>
           </div>
-          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
-            <details>
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="icon-box h-100">
+              <details>
               <summary class="title"><strong>🎁 Peut-on offrir un atelier en cadeau ?</strong></summary>
               <p class="description">
                 → Oui ! Des chèques cadeaux personnalisables sont disponibles,
                 parfaits pour une surprise créative.
               </p>
-            </details>
+              </details>
+            </div>
           </div>
         </div>
 
-        <div class="row">
-          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
-            <details>
+        <div class="row g-4 mb-4">
+          <div class="col-lg-4 col-md-6" data-aos="fade-up">
+            <div class="icon-box h-100">
+              <details>
               <summary class="title"><strong>🧱 Que devient ma pièce après l'atelier ?</strong></summary>
               <p class="description">
                 → Elle sera cuite et émaillée (si prévu).
                 Un délai est nécessaire avant de pouvoir la récupérer,
                 généralement quelques semaines.
               </p>
-            </details>
+              </details>
+            </div>
           </div>
-          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
-            <details>
+          <div class="col-lg-4 col-md-6" data-aos="fade-up">
+            <div class="icon-box h-100">
+              <details>
               <summary class="title"><strong>👶 Les enfants peuvent-ils participer ?</strong></summary>
               <p class="description">
                 → Bien sûr ! Des ateliers spécifiques sont organisés sur demande
                 pour les enfants à partir de 8 ans.
               </p>
-            </details>
+              </details>
+            </div>
           </div>
-          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
-            <details>
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="icon-box h-100">
+              <details>
               <summary class="title"><strong>🎨 Quels types d'ateliers proposez-vous ?</strong></summary>
               <p class="description">
                 Nous proposons des ateliers d'initiation, des séances hebdomadaires ou bimensuelles
                 pour progresser, des stages ponctuels, ainsi que des ateliers parents-enfants.
                 Il y en a pour tous les âges et tous les niveaux !
               </p>
-            </details>
+              </details>
+            </div>
           </div>
         </div>
 
-        <div class="row">
-          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
-            <details>
+        <div class="row g-4 mb-4">
+          <div class="col-lg-4 col-md-6" data-aos="fade-up">
+            <div class="icon-box h-100">
+              <details>
               <summary class="title"><strong>📅 Comment réserver un atelier ?</strong></summary>
               <p class="description"><span>Via la page d'<a href="reserver/">inscription</a>, le formulaire de contact,
                   en nous envoyant un email ou en nous écrivant sur Instagram/Facebook ou encore en téléphonant au +32
                   497 108540. On vous répond vite !</span></p>
-            </details>
+              </details>
+            </div>
           </div>
-          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
-            <details>
+          <div class="col-lg-4 col-md-6" data-aos="fade-up">
+            <div class="icon-box h-100">
+              <details>
               <summary class="title"><strong>😬 Et si malheureusement je casse ma pièce avant la cuisson ?</strong>
               </summary>
               <p class="description">
                 Pas de panique ! C'est aussi ça, l'apprentissage de la terre. On vous accompagne
                 pour recommencer si le timing le permet, ou on en tire une belle leçon créative.
               </p>
-            </details>
+              </details>
+            </div>
           </div>
-          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
-            <details>
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="icon-box h-100">
+              <details>
               <summary class="title"><strong>🧰 Le matériel est-il fourni ?</strong></summary>
               <p class="description">
                 Oui, tout est inclus : argile, outils, tablier. Vous venez les mains libres
@@ -672,13 +654,15 @@
                 les ongles !). Du café, de l'eau ainsi que du thé sont également mis à
                 disposition des participant(e)s.
               </p>
-            </details>
+              </details>
+            </div>
           </div>
         </div>
 
-        <div class="row">
-          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
-            <details>
+        <div class="row g-4">
+          <div class="col-lg-4 col-md-6" data-aos="fade-up">
+            <div class="icon-box h-100">
+              <details>
               <summary class="title"><strong>💔 Quand une pièce casse après la cuisson...</strong></summary>
               <p class="description">
                 La céramique est un art exigeant, fait de patience, de technique... et parfois de déceptions.
@@ -689,10 +673,12 @@
                 cuites - même cassées - seront facturées selon le tarif en vigueur. Cela fait partie de
                 l'aventure de la terre, avec ses belles réussites... et ses imprévus.
               </p>
-            </details>
+              </details>
+            </div>
           </div>
-          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
-            <details>
+          <div class="col-lg-4 col-md-6" data-aos="fade-up">
+            <div class="icon-box h-100">
+              <details>
               <summary class="title"><strong> 🚍 L'atelier 96 est il accessible en bus ?</strong></summary>
               <p class="description">
                 Oui ! L'atelier est facilement accessible via le réseau TEC (Lignes 11, 33, 39 ou 73).</p>
@@ -703,10 +689,12 @@
                 </a>
                 en indiquant simplement votre adresse de départ.
               </p>
-            </details>
+              </details>
+            </div>
           </div>
-          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
-            <details>
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="icon-box h-100">
+              <details>
               <summary class="title"><strong>📸 Peut-on prendre des photos pendant l'atelier ?</strong></summary>
               <p class="description">
                 Oui, avec plaisir !
@@ -718,7 +706,8 @@
                 Et si vous postez vos clichés sur les réseaux sociaux, identifiez-nous - ça nous fait toujours chaud au
                 cœur de voir vos œuvres !
               </p>
-            </details>
+              </details>
+            </div>
           </div>
         </div>
 
@@ -1273,14 +1262,13 @@
           <h2>Actualités</h2>
           <p>Découvrez les dernières nouvelles de Lo en terre ainsi que les prochains vernissages ou ateliers
             d'initiation à la poterie 🏺.</p>
-          <br>
-          <!-- Elfsight Social Feed | loenterre_example -->
-          <div class="elfsight-app-50fabb50-1b56-44a8-b543-a1f90c16acd0" data-elfsight-app-lazy></div>
-          <br>
+        </div>
+        <!-- Elfsight Social Feed | loenterre_example -->
+        <div class="elfsight-app-50fabb50-1b56-44a8-b543-a1f90c16acd0" data-elfsight-app-lazy></div>
+        <div class="news-calendar">
           <iframe title="Calendrier des actualités de Lo en terre"
             src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=Europe%2FBrussels&bgcolor=%23F09300&title=Actualit%C3%A9s%20de%20Lo%20en%20terre&src=bG9lbnRlcnJlOTZAZ21haWwuY29t&color=%23039BE5"
-            style="height:500px;width:100%;border:none;overflow:hidden;" frameborder="0" loading="lazy"
-            scrolling="no"></iframe>
+            frameborder="0" loading="lazy" scrolling="no"></iframe>
         </div>
       </div>
     </section>
@@ -1301,8 +1289,8 @@
           </p>
         </div>
 
-        <div class="row" data-aos="fade-in">
-          <div class="col-lg-5 d-flex align-items-stretch">
+        <div class="row contact-layout" data-aos="fade-in">
+          <div class="col-lg-6 d-flex align-items-stretch">
             <div class="info">
               <div class="address">
                 <i class="bi bi-geo-alt"></i>
@@ -1330,7 +1318,7 @@
             </div>
           </div>
 
-          <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
+          <div class="col-lg-6 mt-5 mt-lg-0 d-flex align-items-stretch">
             <form action="https://formspree.io/f/mpzvnzag" method="post" role="form" class="php-email-form">
               <input type="hidden" name="_next" value="/thanks" />
               <div class="row">
@@ -1368,42 +1356,35 @@
     </section>
     <!-- End Contact Section -->
   </main>
-  <!-- End #main -->
-
-  <!-- ======= Footer ======= -->
-  <footer id="footer">
-    <div class="container">
-      <div class="copyright">
-        &copy; Copyright <strong><span>iPortfolio</span></strong>
-      </div>
-      <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/ -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+  <footer class="site-footer">
+    <div class="container site-footer-inner">
+      <p>
+        Lo en terre — Atelier de poterie et de ceramique a Liege
+        <br />
+        Designed by <a href="https://bootstrapmade.com/" target="_blank" rel="noopener noreferrer">BootstrapMade</a>
+      </p>
+      <div class="site-footer-links">
+        <a href="https://www.instagram.com/ceramiqueloenterre/" target="_blank" rel="noopener noreferrer"
+          aria-label="Instagram Lo en terre"><i class="bx bxl-instagram"></i></a>
+        <a href="https://www.facebook.com/lgreday/" target="_blank" rel="noopener noreferrer"
+          aria-label="Facebook Lo en terre"><i class="bx bxl-facebook"></i></a>
+        <a href="mailto:laurence.greday@gmail.com" aria-label="Envoyer un email a Lo en terre"><i
+            class="bi bi-envelope"></i></a>
       </div>
     </div>
   </footer>
-  <!-- End  Footer -->
 
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
-      class="bi bi-arrow-up-short"></i></a>
+  <a href="#hero" class="back-to-top" aria-label="Remonter en haut de la page"><i class="bi bi-arrow-up"></i></a>
 
-  <!-- Sticky Register Button -->
-  <a href="reserver/" class="sticky-register-btn">
+  <a href="reserver/" class="sticky-register-btn" aria-label="Reserver un atelier">
     <i class="bi bi-calendar-check"></i>
     <span>Réserver un atelier</span>
   </a>
 
-  <!-- Vendor JS Files -->
   <script src="https://elfsightcdn.com/platform.js" async></script>
   <script src="src/assets/vendor/aos/aos.js"></script>
   <script src="src/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="src/assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="src/assets/vendor/typed.js/typed.umd.js"></script>
-  <script src="src/assets/vendor/php-email-form/validate.js"></script>
-
   <script>
     (function () {
       const devHosts = new Set(["dev.loenterre.com"]);
@@ -1414,8 +1395,6 @@
       document.body.classList.add("dev-warning-active");
     })();
   </script>
-
-  <!-- Template Main JS File -->
   <script src="src/assets/js/main.js"></script>
 </body>
 
