@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" />
+    href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&family=Cormorant+Garamond:wght@500;600;700&display=swap" />
   <link rel="stylesheet" href="../src/assets/vendor/bootstrap/css/bootstrap.min.css" />
   <link rel="stylesheet" href="../src/assets/vendor/bootstrap-icons/bootstrap-icons.css" />
   <link rel="stylesheet" href="../src/assets/css/style.css" />
@@ -18,24 +18,30 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background: #f7f9fc;
-      font-family: "Open Sans", sans-serif;
-      color: #444;
+      padding: 24px 12px;
+      background:
+        radial-gradient(circle at 18% 18%, #fdf3e4 0%, rgba(253, 243, 228, 0) 36%),
+        radial-gradient(circle at 80% 10%, #efd9c0 0%, rgba(239, 217, 192, 0) 46%),
+        #f4efe6;
+      font-family: "Source Sans 3", sans-serif;
+      color: #4e392d;
     }
 
     .thank-you-card {
       max-width: 540px;
-      background: #fff;
-      border-radius: 12px;
+      background: linear-gradient(180deg, #fffdf8, #fff6ea);
+      border: 1px solid #e6d3bf;
+      border-radius: 18px;
       padding: 3rem 2.5rem;
-      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+      box-shadow: 0 20px 48px rgba(81, 47, 24, 0.14);
       text-align: center;
     }
 
     .thank-you-card h1 {
-      font-size: 2rem;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 2.35rem;
       margin-bottom: 1rem;
-      color: #f09300;
+      color: #9a4e1b;
     }
 
     .thank-you-card p {

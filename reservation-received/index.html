@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" />
+    href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&family=Cormorant+Garamond:wght@500;600;700&display=swap" />
 
   <link href="../src/assets/img/logo.png" rel="icon" />
   <link href="../src/assets/img/logo.png" rel="apple-touch-icon" />
@@ -30,9 +30,12 @@
       min-height: 100vh;
       display: flex;
       flex-direction: column;
-      background: #f7f3ef;
+      background:
+        radial-gradient(circle at 18% 18%, #fdf3e4 0%, rgba(253, 243, 228, 0) 36%),
+        radial-gradient(circle at 80% 10%, #efd9c0 0%, rgba(239, 217, 192, 0) 46%),
+        #f4efe6;
       color: #4a2a12;
-      font-family: "Open Sans", sans-serif;
+      font-family: "Source Sans 3", sans-serif;
     }
 
     .dev-warning-banner {
@@ -72,11 +75,11 @@
     }
 
     .confirmation-card {
-      background: #fff;
+      background: linear-gradient(180deg, #fffdf8, #fff6ea);
       border-radius: 22px;
       padding: 42px;
-      box-shadow: 0 26px 50px rgba(108, 59, 23, 0.12);
-      border: 1px solid #f0e6db;
+      box-shadow: 0 26px 50px rgba(81, 47, 24, 0.13);
+      border: 1px solid #e7d3be;
     }
 
     .confirmation-badge {
@@ -94,6 +97,7 @@
     }
 
     .confirmation-title {
+      font-family: "Cormorant Garamond", serif;
       font-size: clamp(2rem, 3vw, 2.8rem);
       margin: 18px 0 12px;
       color: #6c3b17;
@@ -134,7 +138,8 @@
     }
 
     .confirmation-details-title {
-      font-size: 1.1rem;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.3rem;
       font-weight: 700;
       color: #6c3b17;
       margin-bottom: 14px;
