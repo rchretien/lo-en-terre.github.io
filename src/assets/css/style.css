@@ -38,6 +38,11 @@ body {
     var(--bg);
 }
 
+.btn,
+button {
+  font-family: "Source Sans 3", sans-serif;
+}
+
 a {
   color: var(--brand);
   text-decoration: none;
@@ -134,6 +139,13 @@ section {
   font-size: 1.35rem;
   color: #4b2c1d;
   letter-spacing: 0.4px;
+  white-space: nowrap;
+}
+
+.site-brand span,
+.register-brand span,
+.gift-brand span {
+  white-space: nowrap;
 }
 
 .site-brand img {
@@ -355,6 +367,15 @@ summary {
   cursor: pointer;
 }
 
+summary .icon {
+  margin-bottom: 0;
+  flex: 0 0 auto;
+}
+
+#workshop summary.title {
+  margin-bottom: 0;
+}
+
 summary::-webkit-details-marker {
   display: none;
 }
@@ -420,6 +441,37 @@ details[open]>summary::after {
 
 .table {
   background: #fff;
+}
+
+.cuisson-table {
+  font-family: "Source Sans 3", sans-serif;
+  font-size: 1rem;
+  line-height: 1.45;
+}
+
+.cuisson-table th,
+.cuisson-table td {
+  vertical-align: middle;
+  padding: 0.75rem;
+}
+
+.cuisson-table thead th,
+.cuisson-table .table-light th {
+  background: #f8ede1;
+  color: #4b2c1d;
+  font-weight: 700;
+  border-color: #e9d9c8;
+}
+
+@media (max-width: 576px) {
+  .cuisson-table {
+    font-size: 0.94rem;
+  }
+
+  .cuisson-table th,
+  .cuisson-table td {
+    padding: 0.6rem 0.5rem;
+  }
 }
 
 .faq .icon-box,
