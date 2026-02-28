@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" />
+    href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&family=Cormorant+Garamond:wght@500;600;700&display=swap" />
 
   <link href="../src/assets/img/logo.png" rel="icon" />
   <link href="../src/assets/img/logo.png" rel="apple-touch-icon" />
@@ -85,8 +85,15 @@
       gap: 12px;
       color: #6c3b17;
       font-weight: 700;
+      font-family: "Cormorant Garamond", serif;
       text-decoration: none;
-      font-size: 1.1rem;
+      font-size: 1.35rem;
+    }
+
+    .gift-header .btn {
+      font-family: "Source Sans 3", sans-serif;
+      font-size: 0.98rem;
+      font-weight: 600;
     }
 
     .gift-brand img {
@@ -184,7 +191,7 @@
     }
 
     .gift-option-title {
-      font-size: 1.2rem;
+      font-size: 1.4rem;
       margin: 14px 0 8px;
       color: #6c3b17;
     }
@@ -214,6 +221,11 @@
     }
 
     .step-card {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      column-gap: 12px;
+      row-gap: 10px;
       background: #fff;
       border-radius: 16px;
       padding: 24px;
@@ -235,9 +247,15 @@
     }
 
     .step-card h3 {
-      margin-top: 14px;
-      font-size: 1.2rem;
+      margin: 0;
+      font-size: 1.34rem;
       color: #6c3b17;
+      flex: 1 1 calc(100% - 64px);
+    }
+
+    .step-card p {
+      width: 100%;
+      margin-top: 2px;
     }
 
     .form-note {
@@ -251,6 +269,47 @@
 
     .conditional-field[hidden] {
       display: none !important;
+    }
+
+    .gift-header,
+    .gift-option-card,
+    .step-card,
+    .form-note {
+      box-shadow: 0 14px 34px rgba(89, 52, 28, 0.12);
+    }
+
+    .gift-brand,
+    .gift-hero h1,
+    .gift-option-title,
+    .step-card h3,
+    .section-title h2 {
+      font-family: "Cormorant Garamond", serif;
+      letter-spacing: 0.2px;
+    }
+
+    .gift-hero .hero-card {
+      background: rgba(35, 17, 8, 0.5);
+      border-color: rgba(255, 238, 221, 0.35);
+    }
+
+    .gift-hero .hero-kicker {
+      display: inline-flex;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: rgba(245, 210, 175, 0.2);
+      border: 1px solid rgba(255, 232, 206, 0.45);
+      font-weight: 700;
+      letter-spacing: 0.7px;
+      text-transform: uppercase;
+      font-size: 0.78rem;
+    }
+
+    .gift-option-card {
+      background: linear-gradient(180deg, #fffefb, #fff8ee);
+    }
+
+    .gift-option-cta {
+      font-weight: 700;
     }
 
     @media (max-width: 991px) {
@@ -394,7 +453,7 @@
             <a class="gift-option-card" href="#gift-form" data-bon="2 séances de céramique (1/15 jours)">
               <span class="gift-badge"><i class="bi bi-calendar2"></i>Progressif</span>
               <h3 class="gift-option-title">2 séances de céramique</h3>
-              <p class="gift-option-desc">À raison d'une fois tous les 15 jours.</p>
+              <p class="gift-option-desc">À raison d'une séance tous les 15 jours.</p>
               <p class="gift-option-price">70 €</p>
               <span class="gift-option-cta">Choisir cette formule <i class="bi bi-arrow-right"></i></span>
             </a>
