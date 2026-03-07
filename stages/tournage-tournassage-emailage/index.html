@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="fr-BE">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stage tournage, tournassage et émaillage | Lo en terre</title>
+  <meta name="description"
+    content="Page dédiée au stage tournage, tournassage et émaillage de Lo en terre. Stub en attente de l'intégration de la réservation en ligne." />
+  <link rel="canonical" href="https://loenterre.com/stages/tournage-tournassage-emailage/" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&family=Cormorant+Garamond:wght@500;600;700&display=swap" />
+
+  <link href="../../src/assets/img/logo.png" rel="icon" />
+  <link href="../../src/assets/img/logo.png" rel="apple-touch-icon" />
+
+  <link rel="stylesheet" href="../../src/assets/vendor/bootstrap/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="../../src/assets/vendor/bootstrap-icons/bootstrap-icons.css" />
+  <link rel="stylesheet" href="../../src/assets/css/style.css" />
+
+  <style>
+    body {
+      background: #f7f3ef;
+    }
+
+    .stage-page {
+      padding: 32px 0 88px;
+    }
+
+    .stage-shell {
+      width: min(1040px, calc(100% - 24px));
+      margin: 0 auto;
+    }
+
+    .stage-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 18px;
+      font-weight: 700;
+      color: #6c3b17;
+    }
+
+    .stage-hero {
+      overflow: hidden;
+      border-radius: 30px;
+      background:
+        linear-gradient(125deg, rgba(56, 31, 16, 0.88), rgba(188, 111, 42, 0.74)),
+        url("../../src/assets/img/workshop/overview5.webp") center / cover no-repeat;
+      color: #fff;
+      padding: 42px;
+      box-shadow: 0 24px 54px rgba(84, 48, 24, 0.2);
+    }
+
+    .stage-kicker,
+    .stage-chip {
+      display: inline-flex;
+      align-items: center;
+      border-radius: 999px;
+      padding: 7px 12px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+    }
+
+    .stage-kicker {
+      background: rgba(255, 232, 207, 0.16);
+      border: 1px solid rgba(255, 232, 207, 0.38);
+      color: #fff2e3;
+      margin-bottom: 16px;
+    }
+
+    .stage-hero h1 {
+      color: #fff;
+      font-size: clamp(2.1rem, 4vw, 3.3rem);
+      margin-bottom: 12px;
+      max-width: 780px;
+    }
+
+    .stage-hero p {
+      max-width: 720px;
+      color: rgba(255, 255, 255, 0.92);
+      font-size: 1.08rem;
+      margin-bottom: 0;
+    }
+
+    .stage-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .stage-chip {
+      background: rgba(16, 8, 4, 0.32);
+      border: 1px solid rgba(255, 233, 213, 0.22);
+      color: #fff;
+    }
+
+    .stage-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 22px;
+      margin-top: 24px;
+    }
+
+    .stage-panel {
+      background: #fff;
+      border: 1px solid #efdfcf;
+      border-radius: 22px;
+      padding: 28px;
+      box-shadow: 0 18px 36px rgba(84, 48, 24, 0.08);
+    }
+
+    .stage-panel h2 {
+      color: #6c3b17;
+      margin-bottom: 14px;
+    }
+
+    .stage-list {
+      display: grid;
+      gap: 12px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .stage-list li {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      color: #5b4a3d;
+    }
+
+    .stage-list i {
+      color: #c9782f;
+      margin-top: 4px;
+    }
+
+    .stub-box {
+      background: linear-gradient(180deg, #fff5ea, #fffdf9);
+      border: 1px dashed #cf9158;
+    }
+
+    .stub-box p {
+      margin-bottom: 18px;
+    }
+
+    .stage-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .btn-stage-primary,
+    .btn-stage-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 18px;
+      border-radius: 999px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .btn-stage-primary {
+      background: #6c3b17;
+      color: #fff;
+    }
+
+    .btn-stage-primary:hover {
+      color: #fff;
+      background: #5a2f12;
+    }
+
+    .btn-stage-secondary {
+      border: 1px solid #dfc4a8;
+      color: #6c3b17;
+      background: #fff;
+    }
+
+    @media (max-width: 991px) {
+      .stage-hero {
+        padding: 32px 24px;
+      }
+
+      .stage-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="stage-page">
+    <div class="stage-shell">
+      <a class="stage-back" href="../../reserver/">
+        <i class="bi bi-arrow-left"></i>Retour à la page d'inscription
+      </a>
+
+      <section class="stage-hero">
+        <span class="stage-kicker">Calendrier dédié</span>
+        <h1>Stage tournage, tournassage et émaillage</h1>
+        <p>
+          Ce stage correspond au parcours complet en quatre séances. Le calendrier de réservation dédié pourra ensuite être branché ici.
+        </p>
+        <div class="stage-meta">
+          <span class="stage-chip"><i class="bi bi-calendar2-week me-2"></i>4 séances</span>
+          <span class="stage-chip"><i class="bi bi-gear-wide-connected me-2"></i>Tournage + finitions</span>
+          <span class="stage-chip"><i class="bi bi-hourglass-split me-2"></i>Stub cal.com</span>
+        </div>
+      </section>
+
+      <section class="stage-grid">
+        <div class="stage-panel">
+          <h2>Ce que cette page précisera</h2>
+          <ul class="stage-list">
+            <li><i class="bi bi-check-circle-fill"></i><span>Le parcours détaillé sur 4 séances</span></li>
+            <li><i class="bi bi-check-circle-fill"></i><span>Les étapes de tournage, tournassage et émaillage</span></li>
+            <li><i class="bi bi-check-circle-fill"></i><span>Le calendrier spécifique à ce stage</span></li>
+          </ul>
+        </div>
+
+        <div class="stage-panel stub-box">
+          <h2>Calendrier à venir</h2>
+          <p>
+            Cette page est un point d'entrée provisoire. Plus tard, elle pourra pointer vers le calendrier cal.com de ce stage complet.
+          </p>
+          <div class="stage-actions">
+            <a class="btn-stage-primary" href="../../reserver/">
+              <i class="bi bi-arrow-counterclockwise"></i>Revenir aux ateliers
+            </a>
+            <a class="btn-stage-secondary"
+              href="mailto:laurence.greday@gmail.com?subject=Demande%20-%20Stage%20tournage%20tournassage%20et%20%C3%A9maillage">
+              <i class="bi bi-envelope"></i>Contacter Laurence
+            </a>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+</body>
+
+</html>
