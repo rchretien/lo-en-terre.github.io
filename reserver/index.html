@@ -222,6 +222,175 @@
       color: #6c3b17;
     }
 
+    .stage-family-card {
+      height: 100%;
+      background: linear-gradient(145deg, #fff8ee, #fffefb);
+      border: 1px solid #eddcc7;
+      border-radius: 24px;
+      padding: 28px;
+      box-shadow: 0 22px 44px rgba(108, 59, 23, 0.1);
+    }
+
+    .stage-family-head {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 22px;
+    }
+
+    .stage-family-intro {
+      max-width: 680px;
+    }
+
+    .stage-family-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 10px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: #6c3b17;
+      color: #fff;
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .stage-family-title {
+      font-size: clamp(1.7rem, 2vw, 2.2rem);
+      color: #6c3b17;
+      margin-bottom: 8px;
+    }
+
+    .stage-family-desc {
+      margin: 0;
+      color: #6b5a4b;
+      font-size: 1.02rem;
+    }
+
+    .stage-family-note {
+      align-self: center;
+      padding: 10px 14px;
+      border-radius: 16px;
+      background: #fff;
+      border: 1px solid #f0dcc5;
+      color: #6c3b17;
+      font-size: 0.95rem;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .stage-options {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .stage-option {
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+      padding: 22px;
+      border-radius: 20px;
+      text-decoration: none;
+      border: 1px solid #f0e6db;
+      box-shadow: 0 18px 38px rgba(108, 59, 23, 0.08);
+      color: #4a2a12;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    }
+
+    .stage-option:hover,
+    .stage-option:focus-visible {
+      transform: translateY(-4px);
+      box-shadow: 0 26px 48px rgba(108, 59, 23, 0.14);
+      border-color: #dd8014;
+      color: #4a2a12;
+    }
+
+    .stage-option--sphere {
+      background: linear-gradient(180deg, #fffefb, #fff7ec 58%, #f7ecde 100%);
+    }
+
+    .stage-option--complete {
+      background: linear-gradient(180deg, #fffaf2, #fff2df 58%, #f3dec3 100%);
+    }
+
+    .stage-option-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+
+    .stage-option-badge,
+    .stage-option-type {
+      display: inline-flex;
+      align-items: center;
+      border-radius: 999px;
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      padding: 6px 10px;
+    }
+
+    .stage-option-badge {
+      background: #6c3b17;
+      color: #fff;
+    }
+
+    .stage-option-type {
+      background: #dd8014;
+      color: #fff;
+    }
+
+    .stage-option-title {
+      font-size: 1.42rem;
+      color: #6c3b17;
+      margin-bottom: 10px;
+    }
+
+    .stage-option-desc {
+      color: #6b5a4b;
+      margin-bottom: 16px;
+    }
+
+    .stage-option-points {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 18px;
+    }
+
+    .stage-option-points span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.82);
+      color: #6c3b17;
+      font-size: 0.92rem;
+      font-weight: 600;
+      border: 1px solid rgba(221, 128, 20, 0.12);
+    }
+
+    .stage-option-cta {
+      margin-top: auto;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 700;
+      color: #6c3b17;
+    }
+
+    .stage-option-cta .bi {
+      font-size: 1rem;
+    }
+
     .step-card {
       display: flex;
       flex-wrap: wrap;
@@ -335,6 +504,14 @@
       .register-hero {
         padding: 70px 0 80px;
       }
+
+      .stage-options {
+        grid-template-columns: 1fr;
+      }
+
+      .stage-family-note {
+        white-space: normal;
+      }
     }
   </style>
 </head>
@@ -384,7 +561,7 @@
       <div class="container">
         <div class="section-title">
           <h2>Choisissez votre atelier</h2>
-          <p>Trois formats se réservent directement en ligne, les autres se font sur demande.</p>
+          <p>Les ateliers et les stages ont chacun leur mode de réservation. Les stages se réservent eux aussi via un calendrier dédié.</p>
         </div>
 
         <div class="row g-4">
@@ -425,20 +602,68 @@
             </a>
           </div>
           <div class="col-md-6 col-lg-4">
-            <a class="category-card category-card--message" href="#reservation-form" data-atelier="Stage">
-              <span class="category-tag"><i class="bi bi-chat-left-text"></i>Message</span>
-              <h3 class="category-title">Stage</h3>
-              <p class="category-desc">Des sessions plus longues pour explorer en profondeur.</p>
-              <span class="category-cta">Envoyer un message <i class="bi bi-arrow-right"></i></span>
-            </a>
-          </div>
-          <div class="col-md-6 col-lg-4">
             <a class="category-card category-card--message" href="#reservation-form" data-atelier="Cours privé">
               <span class="category-tag"><i class="bi bi-chat-left-text"></i>Message</span>
               <h3 class="category-title">Cours privé</h3>
               <p class="category-desc">Un accompagnement personnalisé sur mesure.</p>
               <span class="category-cta">Envoyer un message <i class="bi bi-arrow-right"></i></span>
             </a>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <a class="category-card category-card--message" href="#reservation-form"
+              data-atelier="Atelier parents-enfants">
+              <span class="category-tag"><i class="bi bi-chat-left-text"></i>Message</span>
+              <h3 class="category-title">Ateliers parents-enfants</h3>
+              <p class="category-desc">Un moment partagé pour créer ensemble, à hauteur des petits comme des grands.</p>
+              <span class="category-cta">Envoyer un message <i class="bi bi-arrow-right"></i></span>
+            </a>
+          </div>
+          <div class="col-12">
+            <div class="stage-family-card">
+              <div class="stage-family-head">
+                <div class="stage-family-intro">
+                  <span class="stage-family-kicker"><i class="bi bi-layers"></i>Stages</span>
+                  <h3 class="stage-family-title">Choisissez le bon format de stage</h3>
+                  <p class="stage-family-desc">
+                    Il existe deux stages distincts. Chacun mène vers son propre calendrier pour réserver le bon parcours.
+                  </p>
+                </div>
+              </div>
+
+              <div class="stage-options">
+                <a class="stage-option stage-option--sphere" href="../stages/sphere/">
+                  <div class="stage-option-meta">
+                    <span class="stage-option-badge">2 séances</span>
+                    <span class="stage-option-type"><i class="bi bi-calendar-event me-1"></i>Calendrier</span>
+                  </div>
+                  <h4 class="stage-option-title">Stage sphère</h4>
+                  <p class="stage-option-desc">
+                    Un format court en deux séances, pensé pour se concentrer sur une forme précise et repartir avec un objectif clair.
+                  </p>
+                  <div class="stage-option-points">
+                    <span><i class="bi bi-calendar2-check"></i>Réservation en ligne</span>
+                    <span><i class="bi bi-circle"></i>Travail centré sur la sphère</span>
+                  </div>
+                  <span class="stage-option-cta">Choisir une date <i class="bi bi-arrow-up-right"></i></span>
+                </a>
+
+                <a class="stage-option stage-option--complete" href="../stages/tournage-tournassage-emailage/">
+                  <div class="stage-option-meta">
+                    <span class="stage-option-badge">4 séances</span>
+                    <span class="stage-option-type"><i class="bi bi-calendar-event me-1"></i>Calendrier</span>
+                  </div>
+                  <h4 class="stage-option-title">Stage tournage, tournassage et émaillage</h4>
+                  <p class="stage-option-desc">
+                    Un cycle en quatre séances pour suivre les étapes clés, du tournage jusqu'aux finitions et à l'émaillage.
+                  </p>
+                  <div class="stage-option-points">
+                    <span><i class="bi bi-calendar2-check"></i>Réservation en ligne</span>
+                    <span><i class="bi bi-droplet-half"></i>Finitions + émaillage</span>
+                  </div>
+                  <span class="stage-option-cta">Choisir une date <i class="bi bi-arrow-up-right"></i></span>
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -554,7 +779,7 @@
                     <option>Atelier bimensuel</option>
                     <option>Atelier hebdomadaire</option>
                     <option>Atelier enfant</option>
-                    <option>Stage</option>
+                    <option>Atelier parents-enfants</option>
                     <option>Cours privé</option>
                   </select>
                 </div>
