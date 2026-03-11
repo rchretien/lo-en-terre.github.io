@@ -285,7 +285,7 @@
 
     .stage-options {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
       gap: 18px;
     }
 
@@ -312,6 +312,10 @@
 
     .stage-option--sphere {
       background: linear-gradient(180deg, #fffefb, #fff7ec 58%, #f7ecde 100%);
+    }
+
+    .stage-option--ensemble {
+      background: linear-gradient(180deg, #fffdf8, #fff5e8 58%, #f1e1c7 100%);
     }
 
     .stage-option--complete {
@@ -349,33 +353,15 @@
 
     .stage-option-title {
       font-size: 1.42rem;
+      line-height: 1.25;
       color: #6c3b17;
       margin-bottom: 10px;
+      min-height: 2.5em;
     }
 
     .stage-option-desc {
       color: #6b5a4b;
       margin-bottom: 16px;
-    }
-
-    .stage-option-points {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 18px;
-    }
-
-    .stage-option-points span {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 7px 10px;
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.82);
-      color: #6c3b17;
-      font-size: 0.92rem;
-      font-weight: 600;
-      border: 1px solid rgba(221, 128, 20, 0.12);
     }
 
     .stage-option-cta {
@@ -625,7 +611,7 @@
                   <span class="stage-family-kicker"><i class="bi bi-layers"></i>Stages</span>
                   <h3 class="stage-family-title">Choisissez le bon format de stage</h3>
                   <p class="stage-family-desc">
-                    Il existe deux stages distincts. Chacun mène vers son propre calendrier pour réserver le bon parcours.
+                    Il existe trois stages distincts. Chacun mène vers sa page dédiée pour retrouver le bon déroulé.
                   </p>
                 </div>
               </div>
@@ -633,34 +619,35 @@
               <div class="stage-options">
                 <a class="stage-option stage-option--sphere" href="../stages/sphere/">
                   <div class="stage-option-meta">
-                    <span class="stage-option-badge">2 séances</span>
-                    <span class="stage-option-type"><i class="bi bi-calendar-event me-1"></i>Calendrier</span>
+                    <span class="stage-option-badge">3 séances</span>
                   </div>
                   <h4 class="stage-option-title">Stage sphère</h4>
                   <p class="stage-option-desc">
-                    Un format court en deux séances, pensé pour se concentrer sur une forme précise et repartir avec un objectif clair.
+                    Un stage débutant autour de la sphère, avec trois rendez-vous pour modeler, finaliser puis découvrir la pièce émaillée.
                   </p>
-                  <div class="stage-option-points">
-                    <span><i class="bi bi-calendar2-check"></i>Réservation en ligne</span>
-                    <span><i class="bi bi-circle"></i>Travail centré sur la sphère</span>
+                  <span class="stage-option-cta">Découvrir le stage <i class="bi bi-arrow-up-right"></i></span>
+                </a>
+
+                <a class="stage-option stage-option--ensemble" href="../stages/ensemble/">
+                  <div class="stage-option-meta">
+                    <span class="stage-option-badge">3 séances</span>
                   </div>
-                  <span class="stage-option-cta">Choisir une date <i class="bi bi-arrow-up-right"></i></span>
+                  <h4 class="stage-option-title">Stage ensemble petit-déjeuner ou apéritif</h4>
+                  <p class="stage-option-desc">
+                    Un stage débutant pour concevoir un ensemble du quotidien, avec accompagnement personnalisé sur trois séances.
+                  </p>
+                  <span class="stage-option-cta">Découvrir le stage <i class="bi bi-arrow-up-right"></i></span>
                 </a>
 
                 <a class="stage-option stage-option--complete" href="../stages/tournage-tournassage-emailage/">
                   <div class="stage-option-meta">
                     <span class="stage-option-badge">4 séances</span>
-                    <span class="stage-option-type"><i class="bi bi-calendar-event me-1"></i>Calendrier</span>
                   </div>
                   <h4 class="stage-option-title">Stage tournage, tournassage et émaillage</h4>
                   <p class="stage-option-desc">
-                    Un cycle en quatre séances pour suivre les étapes clés, du tournage jusqu'aux finitions et à l'émaillage.
+                    Quatre journées sur une même semaine pour apprendre les gestes de base du tournage, du tournassage et de l'émaillage.
                   </p>
-                  <div class="stage-option-points">
-                    <span><i class="bi bi-calendar2-check"></i>Réservation en ligne</span>
-                    <span><i class="bi bi-droplet-half"></i>Finitions + émaillage</span>
-                  </div>
-                  <span class="stage-option-cta">Choisir une date <i class="bi bi-arrow-up-right"></i></span>
+                  <span class="stage-option-cta">Découvrir le stage <i class="bi bi-arrow-up-right"></i></span>
                 </a>
               </div>
             </div>
